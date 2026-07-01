@@ -1,0 +1,591 @@
+/* ==========================================
+   ANIMATIONS
+   ARQ Arquitectura
+==========================================*/
+
+/*==============================
+KEYFRAMES
+==============================*/
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+    }
+    to{
+        opacity:1;
+    }
+}
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(60px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes fadeDown{
+    from{
+        opacity:0;
+        transform:translateY(-60px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes fadeLeft{
+    from{
+        opacity:0;
+        transform:translateX(-80px);
+    }
+    to{
+        opacity:1;
+        transform:translateX(0);
+    }
+}
+
+@keyframes fadeRight{
+    from{
+        opacity:0;
+        transform:translateX(80px);
+    }
+    to{
+        opacity:1;
+        transform:translateX(0);
+    }
+}
+
+@keyframes scaleIn{
+    from{
+        opacity:0;
+        transform:scale(.85);
+    }
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+@keyframes heroZoom{
+
+    0%{
+        transform:scale(1.08);
+    }
+
+    50%{
+        transform:scale(1.13);
+    }
+
+    100%{
+        transform:scale(1.08);
+    }
+
+}
+
+@keyframes float{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-12px);
+    }
+
+}
+
+@keyframes pulse{
+
+    0%{
+        transform:scale(1);
+        opacity:1;
+    }
+
+    100%{
+        transform:scale(1.5);
+        opacity:0;
+    }
+
+}
+
+@keyframes shimmer{
+
+    from{
+        transform:translateX(-100%);
+    }
+
+    to{
+        transform:translateX(100%);
+    }
+
+}
+
+@keyframes scrollIndicator{
+
+    0%{
+        transform:translateY(0);
+        opacity:1;
+    }
+
+    100%{
+        transform:translateY(55px);
+        opacity:0;
+    }
+
+}
+
+@keyframes rotateSlow{
+
+    from{
+        transform:rotate(0deg);
+    }
+
+    to{
+        transform:rotate(360deg);
+    }
+
+}
+
+@keyframes glow{
+
+    0%,100%{
+
+        opacity:.15;
+
+        filter:blur(80px);
+
+    }
+
+    50%{
+
+        opacity:.35;
+
+        filter:blur(120px);
+
+    }
+
+}
+
+/*==============================
+REVEAL STATES
+==============================*/
+
+.reveal{
+
+    opacity:0;
+
+    transform:translateY(70px);
+
+    transition:
+
+        opacity .9s var(--ease),
+
+        transform .9s var(--ease);
+
+}
+
+.reveal.active{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+.reveal-left{
+
+    opacity:0;
+
+    transform:translateX(-60px) scale(.995);
+
+    transition:transform .85s cubic-bezier(.2,.9,.3,1), opacity .85s cubic-bezier(.2,.9,.3,1);
+
+}
+
+.reveal-left.active{
+
+    opacity:1;
+
+    transform:translateX(0) scale(1);
+
+}
+
+.reveal-right{
+
+    opacity:0;
+
+    transform:translateX(60px) scale(.995);
+
+    transition:transform .85s cubic-bezier(.2,.9,.3,1), opacity .85s cubic-bezier(.2,.9,.3,1);
+
+}
+
+.reveal-right.active{
+
+    opacity:1;
+
+    transform:translateX(0) scale(1);
+
+}
+
+.scale-in{
+
+    opacity:0;
+
+    transform:scale(.9);
+
+    transition:
+
+    opacity .8s,
+
+    transform .8s var(--ease);
+
+}
+
+.scale-in.active{
+
+    opacity:1;
+
+    transform:scale(1);
+
+}
+
+/*==============================
+TEXT REVEALS
+==============================*/
+
+.split-line{
+
+    overflow:hidden;
+
+}
+
+.split-line span{
+
+    display:block;
+
+    transform:translateY(110%);
+
+}
+
+/*==============================
+HOVER LIFT
+==============================*/
+
+.hover-lift{
+
+    transition:
+
+        transform .45s var(--ease),
+
+        box-shadow .45s;
+
+}
+
+.hover-lift:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:var(--shadow-lg);
+
+}
+
+/*==============================
+IMAGE ZOOM
+==============================*/
+
+.zoom{
+
+    overflow:hidden;
+
+}
+
+.zoom img{
+
+    transition:
+
+        transform 1.2s var(--ease),
+
+        filter .8s;
+
+}
+
+.zoom:hover img{
+
+    transform:scale(1.12);
+
+}
+
+/*==============================
+MAGNETIC
+==============================*/
+
+.magnetic{
+
+    will-change:transform;
+
+    transition:transform .25s ease;
+
+}
+
+/*==============================
+PARALLAX
+==============================*/
+
+.parallax{
+
+    will-change:transform;
+
+}
+
+/*==============================
+CURSOR SCALE TARGET
+==============================*/
+
+.cursor-hover{
+
+    cursor:none;
+
+}
+
+/*==============================
+BUTTON RIPPLE
+==============================*/
+
+.btn{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.btn::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:auto;
+
+    width:0;
+
+    height:0;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.18);
+
+    transform:translate(-50%,-50%);
+
+    transition:
+
+        width .7s,
+
+        height .7s,
+
+        opacity .7s;
+
+    opacity:0;
+
+}
+
+.btn:active::after{
+
+    width:420px;
+
+    height:420px;
+
+    opacity:1;
+
+    transition:0s;
+
+}
+
+/*==============================
+LOADER
+==============================*/
+
+#loader{
+
+    position:fixed;
+
+    inset:0;
+
+    background:var(--color-black);
+
+    display:grid;
+
+    place-items:center;
+
+    z-index:var(--z-loader);
+
+    transition:
+
+        opacity .8s,
+
+        visibility .8s;
+
+}
+
+#loader.hidden{
+
+    opacity:0;
+
+    visibility:hidden;
+
+}
+
+.loader-content{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    gap:1rem;
+
+    width:min(320px, 80vw);
+
+}
+
+.loader-logo{
+
+    font-size:5rem;
+
+    font-family:var(--font-heading);
+
+    animation:fadeUp 1s ease;
+
+}
+
+.loader-bar{
+
+    width:100%;
+
+    height:2px;
+
+    background:rgba(255,255,255,0.16);
+
+    border-radius:999px;
+
+    overflow:hidden;
+
+}
+
+.loader-bar-fill{
+
+    display:block;
+
+    width:0%;
+
+    height:100%;
+
+    background:linear-gradient(90deg, var(--color-red), rgba(255,255,255,0.95));
+
+    box-shadow:0 0 24px rgba(192,57,43,0.35);
+
+    transition:width .25s ease-out;
+
+}
+
+/*==============================
+PROGRESS BAR
+==============================*/
+
+#scroll-progress{
+
+    transition:width .12s linear;
+
+}
+
+/*==============================
+HERO EFFECTS
+==============================*/
+
+.hero-background img{
+
+    animation:
+
+        heroZoom 18s ease-in-out infinite;
+
+}
+
+.hero-light{
+
+    animation:
+
+        glow 10s ease-in-out infinite;
+
+}
+
+/*==============================
+SPIN
+==============================*/
+
+.spin{
+
+    animation:
+
+        rotateSlow 18s linear infinite;
+
+}
+
+/*==============================
+FLOAT
+==============================*/
+
+.float{
+
+    animation:
+
+        float 5s ease-in-out infinite;
+
+}
+
+/*==============================
+STAGGER
+==============================*/
+
+.stagger>*{
+
+    opacity:0;
+
+}
+
+/*==============================
+REDUCED MOTION
+==============================*/
+
+@media(prefers-reduced-motion:reduce){
+
+*{
+
+animation:none !important;
+
+transition:none !important;
+
+}
+
+}
+
+
+/* ── Loader logo image ── */
+.loader-logo-img {
+  width: min(240px, 55vw);
+  height: auto;
+  animation: fadeUp 0.9s ease both;
+}
+
+/* ── Hero content hidden while loading (no FOUC) ── */
+body.is-loading .hero-tag,
+body.is-loading .hero-title span,
+body.is-loading .hero-description,
+body.is-loading .hero-buttons .btn,
+body.is-loading .scroll-indicator { opacity: 0; }

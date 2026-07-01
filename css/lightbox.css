@@ -1,0 +1,170 @@
+/* ==========================================
+   LIGHTBOX
+   ARQ Arquitectura
+========================================== */
+
+#lightbox{
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:var(--z-lightbox);
+
+    background:rgba(8,8,8,.97);
+
+    backdrop-filter:blur(24px);
+
+    -webkit-backdrop-filter:blur(24px);
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    flex-direction:column;
+
+    gap:24px;
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transition:opacity .5s var(--ease), visibility .5s;
+
+    padding:60px 40px;
+
+}
+
+#lightbox.active{
+
+    opacity:1;
+
+    visibility:visible;
+
+}
+
+.lightbox-image{
+
+    max-width:min(1100px,90vw);
+
+    max-height:70vh;
+
+    object-fit:contain;
+
+    border-radius:var(--radius-md);
+
+    box-shadow:var(--shadow-lg);
+
+    transform:scale(.94);
+
+    transition:transform .5s var(--ease);
+
+}
+
+#lightbox.active .lightbox-image{
+
+    transform:scale(1);
+
+}
+
+.lightbox-caption{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:16px;
+
+    color:var(--color-grey);
+
+    text-align:center;
+
+}
+
+.lightbox-title{
+
+    color:var(--color-white);
+
+    font-family:var(--font-heading);
+
+    font-size:1.4rem;
+
+}
+
+.lightbox-location::before{
+
+    content:"—";
+
+    margin-right:16px;
+
+}
+
+.lightbox-close{
+
+    position:absolute;
+
+    top:36px;
+
+    right:40px;
+
+    width:54px;
+
+    height:54px;
+
+    border-radius:50%;
+
+    border:1px solid rgba(255,255,255,.15);
+
+    color:var(--color-white);
+
+    font-size:1.8rem;
+
+    line-height:1;
+
+    background:rgba(255,255,255,.04);
+
+    transition:all var(--transition-fast);
+
+}
+
+.lightbox-close:hover{
+
+    border-color:var(--color-red);
+
+    background:var(--color-red);
+
+    transform:rotate(90deg);
+
+}
+
+@media (max-width:600px){
+
+    .lightbox-close{
+
+        top:20px;
+        right:20px;
+
+        width:44px;
+        height:44px;
+
+        font-size:1.4rem;
+
+    }
+
+    .lightbox-caption{
+
+        flex-direction:column;
+
+        gap:6px;
+
+    }
+
+    .lightbox-location::before{
+
+        display:none;
+
+    }
+
+}

@@ -1,0 +1,150 @@
+/* ==========================================
+   PORTFOLIO
+==========================================*/
+
+.portfolio-filters{
+
+    display:flex;
+
+    gap:1rem;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    margin-bottom:4rem;
+
+}
+
+.filter-btn{
+
+    padding:14px 26px;
+
+    border-radius:999px;
+
+    border:1px solid var(--color-border);
+
+    background:transparent;
+
+    color:var(--color-grey);
+
+    transition:all .35s ease;
+
+}
+
+.filter-btn:hover{
+
+    color:white;
+
+    border-color:var(--color-red);
+
+}
+
+.filter-btn.active{
+
+    background:var(--color-red);
+
+    color:white;
+
+    border-color:var(--color-red);
+
+}
+
+.portfolio-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
+
+    gap:2rem;
+
+}
+
+.portfolio-card{
+
+    position:relative;
+
+    overflow:hidden;
+
+    border-radius:24px;
+
+    cursor:pointer;
+
+}
+
+.portfolio-image{
+
+    overflow:hidden;
+
+}
+
+.portfolio-image img{
+
+    width:100%;
+
+    height:520px;
+
+    object-fit:cover;
+
+    transition:
+
+        transform 1s ease,
+
+        filter .5s ease;
+
+}
+
+.portfolio-overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    display:flex;
+
+    align-items:flex-end;
+
+    padding:2rem;
+
+    background:
+
+    linear-gradient(
+
+        transparent,
+
+        rgba(0,0,0,.92)
+
+    );
+
+    opacity:0;
+
+    transition:.45s;
+
+}
+
+.portfolio-card:hover .portfolio-overlay{
+
+    opacity:1;
+
+}
+
+.portfolio-card:hover img{
+
+    transform:scale(1.12);
+
+}
+
+.project-title{
+
+    font-size:2rem;
+
+    margin:.5rem 0;
+
+}
+
+.project-location{
+
+    color:var(--color-grey);
+
+}
+

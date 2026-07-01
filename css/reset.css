@@ -1,0 +1,311 @@
+/* ==========================================
+   RESET
+   ARQ Arquitectura
+   ========================================== */
+
+/* ---------- Box Model ---------- */
+
+*,
+*::before,
+*::after{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+/* ---------- HTML ---------- */
+
+html{
+    
+    -webkit-text-size-adjust:100%;
+    text-size-adjust:100%;
+}
+
+/* ---------- Body ---------- */
+
+body{
+
+    min-height:100vh;
+
+    background:#000000;
+
+    color:var(--color-white);
+
+    font-family:var(--font-body);
+
+    font-size:var(--fs-base);
+
+    font-weight:var(--fw-light);
+
+    line-height:var(--lh-body);
+
+    text-rendering:optimizeLegibility;
+
+    -webkit-font-smoothing:antialiased;
+
+    -moz-osx-font-smoothing:grayscale;
+
+    overflow-x:hidden;
+
+}
+
+/* ---------- Typography ---------- */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+
+    font-family:var(--font-heading);
+
+    font-weight:var(--fw-light);
+
+    line-height:var(--lh-heading);
+
+    letter-spacing:var(--tracking-tight);
+
+}
+
+p{
+
+    max-width:70ch;
+
+}
+
+/* ---------- Lists ---------- */
+
+ul,
+ol{
+
+    list-style:none;
+
+}
+
+/* ---------- Links ---------- */
+
+a{
+
+    color:inherit;
+
+    text-decoration:none;
+
+}
+
+/* ---------- Images ---------- */
+
+img,
+picture,
+video,
+canvas,
+svg{
+
+    display:block;
+
+    max-width:100%;
+
+}
+
+img{
+
+    user-select:none;
+
+    -webkit-user-drag:none;
+
+}
+
+/* ---------- Buttons ---------- */
+
+button{
+
+    background:none;
+
+    border:none;
+
+    outline:none;
+
+    cursor:pointer;
+
+    font:inherit;
+
+    color:inherit;
+
+}
+
+/* ---------- Forms ---------- */
+
+input,
+textarea,
+select{
+
+    font:inherit;
+
+    color:inherit;
+
+    background:none;
+
+    border:none;
+
+    outline:none;
+
+    appearance:none;
+
+}
+
+textarea{
+
+    resize:vertical;
+
+}
+
+/* ---------- Tables ---------- */
+
+table{
+
+    border-collapse:collapse;
+
+    border-spacing:0;
+
+}
+
+/* ---------- Selection ---------- */
+
+::selection{
+
+    background:var(--color-red);
+
+    color:var(--color-white);
+
+}
+
+::-moz-selection{
+
+    background:var(--color-red);
+
+    color:var(--color-white);
+
+}
+
+/* ---------- Scrollbar ---------- */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:var(--color-black);
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:var(--color-grey-dark);
+
+    border-radius:999px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:var(--color-red);
+
+}
+
+/* Firefox */
+
+*{
+
+    scrollbar-width:thin;
+
+    scrollbar-color:var(--color-grey-dark) var(--color-black);
+
+}
+
+/* ---------- Focus ---------- */
+
+:focus-visible{
+
+    outline:2px solid var(--color-red);
+
+    outline-offset:4px;
+
+}
+
+/* ---------- Hidden ---------- */
+
+[hidden]{
+
+    display:none !important;
+
+}
+
+/* ---------- Disabled ---------- */
+
+:disabled{
+
+    cursor:not-allowed;
+
+    opacity:.6;
+
+}
+
+/* ---------- Utility ---------- */
+
+html.lenis,
+html.lenis body{
+
+    height:auto;
+
+}
+
+.lenis.lenis-smooth{
+
+    scroll-behavior:auto;
+
+}
+
+.lenis.lenis-smooth [data-lenis-prevent]{
+
+    overscroll-behavior:contain;
+
+}
+
+.lenis.lenis-stopped{
+
+    overflow:hidden;
+
+}
+
+.lenis.lenis-scrolling iframe{
+
+    pointer-events:none;
+
+}
+
+/* ---------- Motion Preferences ---------- */
+
+@media (prefers-reduced-motion: reduce){
+
+*,
+*::before,
+*::after{
+
+animation-duration:.01ms !important;
+
+animation-iteration-count:1 !important;
+
+transition-duration:.01ms !important;
+
+scroll-behavior:auto !important;
+
+}
+
+}
+
+
+/* ── Loader lock ── */
+body.is-loading { overflow: hidden; height: 100vh; }

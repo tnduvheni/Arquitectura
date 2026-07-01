@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ARQ Arquitectura | Architecture Studio</title>
+  <meta name="description" content="ARQ Arquitectura is a Johannesburg-based architecture studio specialising in residential, commercial and concept design across South Africa.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/navigation.css">
+  <link rel="stylesheet" href="css/hero.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/featured.css">
+  <link rel="stylesheet" href="css/portfolio.css">
+  <link rel="stylesheet" href="css/lightbox.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body class="is-loading">
+
+  <!-- ── LOADER ── -->
+  <div id="loader" role="status" aria-label="Loading">
+    <div class="loader-content">
+      <img src="assets/images/logo.jpg" alt="ARQ Arquitectura" class="loader-logo-img">
+      <div class="loader-bar" aria-hidden="true">
+        <span class="loader-bar-fill"></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── CURSOR ── -->
+  <div id="cursor" aria-hidden="true">
+    <div class="cursor-dot"></div>
+    <div class="cursor-ring"></div>
+    <div class="cursor-text"></div>
+  </div>
+
+  <!-- ── SCROLL PROGRESS ── -->
+  <div id="scroll-progress" aria-hidden="true"></div>
+
+  <!-- ── NAVIGATION ── -->
+  <header>
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+      <a href="#" class="logo" aria-label="ARQ Arquitectura — home">
+        <img src="assets/images/logo.jpg" alt="ARQ Arquitectura">
+      </a>
+
+      <ul class="nav-links" role="list">
+        <li><a href="#about">Studio</a></li>
+        <li><a href="#portfolio">Projects</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#process">Process</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <a href="#contact" class="nav-cta">Start a Project</a>
+
+      <button class="menu-btn" aria-label="Open menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
+  </header>
+
+  <!-- ── MOBILE MENU ── -->
+  <div class="mobile-menu" role="dialog" aria-modal="true" aria-label="Mobile navigation">
+    <a href="#about">Studio</a>
+    <a href="#portfolio">Projects</a>
+    <a href="#services">Services</a>
+    <a href="#process">Process</a>
+    <a href="#contact">Contact</a>
+  </div>
+
+  <main>
+
+    <!-- ════════════════════════════════
+         HERO
+    ════════════════════════════════ -->
+    <section id="hero" aria-label="Hero">
+      <div class="hero-background">
+        <img
+          src="assets/images/hero/IMG-20260628-WA0077.jpg"
+          alt="Waterfront residence designed by ARQ Arquitectura"
+          loading="eager"
+          fetchpriority="high">
+      </div>
+      <div class="hero-overlay" aria-hidden="true"></div>
+      <div class="hero-grid"    aria-hidden="true"></div>
+      <div class="hero-light"   aria-hidden="true"></div>
+
+      <div class="hero-content container">
+        <p class="hero-tag">ARQ Arquitectura — Johannesburg</p>
+
+        <h1 class="hero-title">
+          <span>Spaces that</span>
+          <span>outlast</span>
+          <span>the brief.</span>
+        </h1>
+
+        <p class="hero-description">
+          We design architecture that belongs to its place, serves its people
+          and endures over time — from private residences to concept-driven
+          commercial work across South Africa.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="#portfolio" class="btn btn-primary">View Projects</a>
+          <a href="#contact"   class="btn btn-secondary">Start a Project</a>
+        </div>
+      </div>
+
+      <div class="scroll-indicator" aria-hidden="true"><span></span></div>
+    </section>
+
+    <!-- ════════════════════════════════
+         ABOUT
+    ════════════════════════════════ -->
+    <section id="about" class="section" aria-labelledby="about-heading">
+      <div class="container about-grid">
+
+        <div class="about-image image-reveal reveal-left">
+          <img
+            src="assets/images/hero/IMG-20260628-WA0039.jpg"
+            alt="ARQ Arquitectura commercial project — bold geometric facade"
+            loading="lazy">
+        </div>
+
+        <div class="reveal-right">
+          <p class="section-subtitle">The Studio</p>
+          <h2 id="about-heading" class="section-title">
+            Architecture <em>rooted</em><br>in place and purpose.
+          </h2>
+
+          <p class="section-description" style="margin-bottom:1.8rem;">
+            ARQ Arquitectura is a Johannesburg-based studio working across
+            residential, commercial and concept design. We believe a building
+            succeeds when it responds honestly to its site, its climate and
+            the people who use it — not when it chases a trend.
+          </p>
+          <p class="section-description">
+            Every project starts with listening: to the brief, to the land,
+            and to the budget. What follows is a careful process of design,
+            iteration and detailing that carries through from first sketch
+            to final handover.
+          </p>
+
+          <div class="about-stats">
+            <div class="stat">
+              <h3 data-count="48">0</h3>
+              <span>Projects Delivered</span>
+            </div>
+            <div class="stat">
+              <h3 data-count="12">0</h3>
+              <span>Years in Practice</span>
+            </div>
+            <div class="stat">
+              <h3 data-count="9">0</h3>
+              <span>Industry Awards</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════
+         FEATURED PROJECT
+    ════════════════════════════════ -->
+    <section class="section featured-project" aria-labelledby="featured-heading">
+      <div class="featured-image">
+        <img
+          src="assets/images/featured/IMG-20260628-WA0070.jpg"
+          alt="Riverside Residence — featured project by ARQ Arquitectura"
+          loading="lazy">
+      </div>
+
+      <div class="featured-content">
+        <p class="section-subtitle">Featured Project</p>
+        <h2 id="featured-heading" class="section-title">Riverside Residence</h2>
+
+        <p class="section-description" style="margin-bottom:2rem;">
+          A waterfront family home that opens fully toward the river, using
+          deep overhangs and a layered material palette of stone, timber and
+          glass to mediate between shade and openness through every season.
+        </p>
+
+        <div class="tags" style="margin-bottom:2.5rem;">
+          <span class="tag">Residential</span>
+          <span class="tag">Waterfront</span>
+          <span class="tag">2025</span>
+        </div>
+
+        <a href="#portfolio" class="btn btn-outline">View All Projects</a>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════
+         PORTFOLIO
+    ════════════════════════════════ -->
+    <section id="portfolio" class="section" aria-labelledby="portfolio-heading">
+      <div class="container-wide">
+
+        <div class="section-header">
+          <div>
+            <p class="section-subtitle">Selected Work</p>
+            <h2 id="portfolio-heading" class="section-title">
+              A portfolio built<br>on <em>restraint</em>.
+            </h2>
+          </div>
+          <p class="section-description">
+            Residential and concept projects completed across South Africa,
+            each shaped by its own site and brief.
+          </p>
+        </div>
+
+        <div class="portfolio-filters" role="group" aria-label="Filter projects">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="residential">Residential</button>
+          <button class="filter-btn" data-filter="concept">Concept</button>
+          <button class="filter-btn" data-filter="commercial">Commercial</button>
+        </div>
+
+        <div class="portfolio-grid">
+
+          <article class="portfolio-card reveal" data-category="residential" data-title="Hillside Residence" data-location="Sandton, Johannesburg">
+            <div class="portfolio-image">
+              <img src="assets/images/portfolio/Residence/IMG-20260628-WA0038.jpg" alt="Hillside Residence" loading="lazy">
+            </div>
+            <div class="portfolio-overlay" aria-hidden="true">
+              <div>
+                <p class="project-category">Residential</p>
+                <h3 class="project-title">Hillside Residence</h3>
+                <p class="project-location">Sandton, Johannesburg</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="portfolio-card reveal" data-category="residential" data-title="Courtyard House" data-location="Pretoria East">
+            <div class="portfolio-image">
+              <img src="assets/images/portfolio/Residence/IMG-20260628-WA0040.jpg" alt="Courtyard House" loading="lazy">
+            </div>
+            <div class="portfolio-overlay" aria-hidden="true">
+              <div>
+                <p class="project-category">Residential</p>
+                <h3 class="project-title">Courtyard House</h3>
+                <p class="project-location">Pretoria East</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="portfolio-card reveal" data-category="concept" data-title="Terrace Pavilion" data-location="Concept Study">
+            <div class="portfolio-image">
+              <img src="assets/images/portfolio/Residence/IMG-20260628-WA0042.jpg" alt="Terrace Pavilion concept" loading="lazy">
+            </div>
+            <div class="portfolio-overlay" aria-hidden="true">
+              <div>
+                <p class="project-category">Concept</p>
+                <h3 class="project-title">Terrace Pavilion</h3>
+                <p class="project-location">Concept Study</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="portfolio-card reveal" data-category="residential" data-title="Glass Box Residence" data-location="Bryanston, Johannesburg">
+            <div class="portfolio-image">
+              <img src="assets/images/portfolio/Residence2/IMG-20260628-WA0085.jpg" alt="Glass Box Residence" loading="lazy">
+            </div>
+            <div class="portfolio-overlay" aria-hidden="true">
+              <div>
+                <p class="project-category">Residential</p>
+                <h3 class="project-title">Glass Box Residence</h3>
+                <p class="project-location">Bryanston, Johannesburg</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="portfolio-card reveal" data-category="residential" data-title="The Linear House" data-location="Waterkloof, Pretoria">
+            <div class="portfolio-image">
+              <img src="assets/images/portfolio/Residence2/IMG-20260628-WA0087.jpg" alt="The Linear House" loading="lazy">
+            </div>
+            <div class="portfolio-overlay" aria-hidden="true">
+              <div>
+                <p class="project-category">Residential</p>
+                <h3 class="project-title">The Linear House</h3>
+                <p class="project-location">Waterkloof, Pretoria</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="portfolio-card reveal" data-category="concept" data-title="Timber Retreat" data-location="Concept Study">
+            <div class="portfolio-image">
+              <img src="assets/images/portfolio/Residence2/IMG-20260628-WA0089.jpg" alt="Timber Retreat concept" loading="lazy">
+            </div>
+            <div class="portfolio-overlay" aria-hidden="true">
+              <div>
+                <p class="project-category">Concept</p>
+                <h3 class="project-title">Timber Retreat</h3>
+                <p class="project-location">Concept Study</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="portfolio-card reveal" data-category="residential" data-title="Stone &amp; Steel House" data-location="Constantia, Cape Town">
+            <div class="portfolio-image">
+              <img src="assets/images/portfolio/Residence3/IMG-20260628-WA0075.jpg" alt="Stone and Steel House" loading="lazy">
+            </div>
+            <div class="portfolio-overlay" aria-hidden="true">
+              <div>
+                <p class="project-category">Residential</p>
+                <h3 class="project-title">Stone &amp; Steel House</h3>
+                <p class="project-location">Constantia, Cape Town</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="portfolio-card reveal" data-category="residential" data-title="Garden Residence" data-location="Hyde Park, Johannesburg">
+            <div class="portfolio-image">
+              <img src="assets/images/portfolio/Residence3/IMG-20260628-WA0079.jpg" alt="Garden Residence" loading="lazy">
+            </div>
+            <div class="portfolio-overlay" aria-hidden="true">
+              <div>
+                <p class="project-category">Residential</p>
+                <h3 class="project-title">Garden Residence</h3>
+                <p class="project-location">Hyde Park, Johannesburg</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="portfolio-card reveal" data-category="commercial" data-title="The Apex Tower" data-location="Johannesburg CBD">
+            <div class="portfolio-image">
+              <img src="assets/images/portfolio/Residence4/IMG-20260628-WA0025.jpg" alt="The Apex Tower commercial" loading="lazy">
+            </div>
+            <div class="portfolio-overlay" aria-hidden="true">
+              <div>
+                <p class="project-category">Commercial</p>
+                <h3 class="project-title">The Apex Tower</h3>
+                <p class="project-location">Johannesburg CBD</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="portfolio-card reveal" data-category="concept" data-title="The Black Pavilion" data-location="Concept Study">
+            <div class="portfolio-image">
+              <img src="assets/images/portfolio/Residence4/IMG-20260628-WA0057.jpg" alt="The Black Pavilion concept" loading="lazy">
+            </div>
+            <div class="portfolio-overlay" aria-hidden="true">
+              <div>
+                <p class="project-category">Concept</p>
+                <h3 class="project-title">The Black Pavilion</h3>
+                <p class="project-location">Concept Study</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="portfolio-card reveal" data-category="residential" data-title="The Ridge" data-location="Sandton, Johannesburg">
+            <div class="portfolio-image">
+              <img src="assets/images/portfolio/Residence3/IMG-20260628-WA0073.jpg" alt="The Ridge residence" loading="lazy">
+            </div>
+            <div class="portfolio-overlay" aria-hidden="true">
+              <div>
+                <p class="project-category">Residential</p>
+                <h3 class="project-title">The Ridge</h3>
+                <p class="project-location">Sandton, Johannesburg</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="portfolio-card reveal" data-category="residential" data-title="Heritage Court" data-location="Rosebank, Johannesburg">
+            <div class="portfolio-image">
+              <img src="assets/images/portfolio/Residence2/IMG-20260628-WA0091.jpg" alt="Heritage Court" loading="lazy">
+            </div>
+            <div class="portfolio-overlay" aria-hidden="true">
+              <div>
+                <p class="project-category">Residential</p>
+                <h3 class="project-title">Heritage Court</h3>
+                <p class="project-location">Rosebank, Johannesburg</p>
+              </div>
+            </div>
+          </article>
+
+        </div><!-- .portfolio-grid -->
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════
+         SERVICES
+    ════════════════════════════════ -->
+    <section id="services" class="section" aria-labelledby="services-heading">
+      <div class="container">
+
+        <div class="section-header">
+          <div>
+            <p class="section-subtitle">What We Do</p>
+            <h2 id="services-heading" class="section-title">
+              Services built<br>for the <em>whole</em> process.
+            </h2>
+          </div>
+        </div>
+
+        <div class="services-grid">
+          <div class="card service-card reveal">
+            <span class="service-number">01</span>
+            <h3 class="service-title">Residential Design</h3>
+            <p class="service-description">
+              New-build homes and major renovations, designed around how a
+              family actually lives — from first concept through to construction
+              documentation and site delivery.
+            </p>
+            <a href="#contact" class="service-link">Enquire →</a>
+          </div>
+
+          <div class="card service-card reveal">
+            <span class="service-number">02</span>
+            <h3 class="service-title">Commercial Architecture</h3>
+            <p class="service-description">
+              Workspaces, retail and hospitality projects that balance brand,
+              function and budget without losing architectural integrity or
+              spatial quality.
+            </p>
+            <a href="#contact" class="service-link">Enquire →</a>
+          </div>
+
+          <div class="card service-card reveal">
+            <span class="service-number">03</span>
+            <h3 class="service-title">Concept &amp; Visualisation</h3>
+            <p class="service-description">
+              Early-stage concept design and photorealistic visualisation to
+              test ideas, secure buy-in and stress-test a brief before a
+              single brick is laid.
+            </p>
+            <a href="#contact" class="service-link">Enquire →</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════
+         PROCESS
+    ════════════════════════════════ -->
+    <section id="process" class="section" aria-labelledby="process-heading">
+      <div class="container">
+
+        <div class="section-header">
+          <div>
+            <p class="section-subtitle">How We Work</p>
+            <h2 id="process-heading" class="section-title">
+              A process built<br>on <em>clarity</em>.
+            </h2>
+          </div>
+        </div>
+
+        <div class="timeline">
+          <div class="timeline-line" aria-hidden="true"></div>
+
+          <div class="timeline-item">
+            <div class="timeline-number" aria-hidden="true">01</div>
+            <div class="timeline-content">
+              <h3>Discovery</h3>
+              <p>We start by understanding your site, budget and how you want
+              to live or work in the space — the foundation every decision
+              after this is built on.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-number" aria-hidden="true">02</div>
+            <div class="timeline-content">
+              <h3>Concept Design</h3>
+              <p>Early massing, planning and material studies are developed
+              and tested against the brief, with visualisations to bring the
+              idea to life.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-number" aria-hidden="true">03</div>
+            <div class="timeline-content">
+              <h3>Documentation</h3>
+              <p>Approved concepts are developed into detailed technical
+              drawings and specifications ready for council approval
+              and tender.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-number" aria-hidden="true">04</div>
+            <div class="timeline-content">
+              <h3>Delivery</h3>
+              <p>We stay involved through construction, working alongside
+              contractors to make sure the built result matches the
+              design intent.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════
+         CONTACT
+    ════════════════════════════════ -->
+    <section id="contact" class="section" aria-labelledby="contact-heading">
+      <div class="container">
+
+        <div class="contact-grid">
+          <div>
+            <p class="section-subtitle">Get In Touch</p>
+            <h2 id="contact-heading" class="section-title">
+              Start a<br><em>conversation</em>.
+            </h2>
+
+            <div class="contact-info-item">
+              <p class="contact-info-label">Email</p>
+              <p class="contact-info-value">
+                <a href="mailto:studio@arqarquitectura.co.za">studio@arqarquitectura.co.za</a>
+              </p>
+            </div>
+            <div class="contact-info-item">
+              <p class="contact-info-label">Phone</p>
+              <p class="contact-info-value">
+                <a href="tel:+27110000000">+27 11 000 0000</a>
+              </p>
+            </div>
+            <div class="contact-info-item">
+              <p class="contact-info-label">Studio</p>
+              <p class="contact-info-value">Johannesburg, South Africa</p>
+            </div>
+          </div>
+
+          <form id="contact-form" class="contact-form" novalidate>
+            <div class="form-row form-group">
+              <input class="input" type="text"  name="name"    placeholder="Full name"      required autocomplete="name">
+              <input class="input" type="email" name="email"   placeholder="Email address"  required autocomplete="email">
+            </div>
+            <div class="form-group">
+              <input class="input" type="text"  name="subject" placeholder="Project type">
+            </div>
+            <div class="form-group">
+              <textarea class="input" name="message" placeholder="Tell us about your project" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Send Message</button>
+          </form>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ── LIGHTBOX ── -->
+  <div id="lightbox" role="dialog" aria-modal="true" aria-label="Project image"></div>
+
+  <!-- ── FOOTER ── -->
+  <footer>
+    <div class="container">
+
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="assets/images/logo.jpg" alt="ARQ Arquitectura" class="footer-logo">
+          <p class="footer-tagline">
+            Architecture that belongs to its place, serves its people
+            and endures over time.
+          </p>
+          <div class="footer-social">
+            <a href="#" aria-label="Instagram">IG</a>
+            <a href="#" aria-label="LinkedIn">IN</a>
+            <a href="#" aria-label="Pinterest">PI</a>
+          </div>
+        </div>
+
+        <div>
+          <p class="footer-heading">Studio</p>
+          <nav class="footer-links" aria-label="Footer navigation">
+            <a href="#about">About</a>
+            <a href="#portfolio">Projects</a>
+            <a href="#services">Services</a>
+            <a href="#process">Process</a>
+          </nav>
+        </div>
+
+        <div>
+          <p class="footer-heading">Contact</p>
+          <div class="footer-links">
+            <a href="mailto:studio@arqarquitectura.co.za">studio@arqarquitectura.co.za</a>
+            <a href="tel:+27110000000">+27 11 000 0000</a>
+            <span>Johannesburg, South Africa</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© <span id="year"></span> ARQ Arquitectura. All rights reserved.</span>
+        <span>Designed with intent.</span>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ── LIBRARIES ── -->
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1/bundled/lenis.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
+
+  <!-- ── SCRIPTS ── -->
+  <script src="js/cursor.js"></script>
+  <script src="js/navigation.js"></script>
+  <script src="js/hero.js"></script>
+  <script src="js/reveal.js"></script>
+  <script src="js/featured.js"></script>
+  <script src="js/portfolio.js"></script>
+  <script src="js/process.js"></script>
+  <script src="js/lightbox.js"></script>
+  <script src="js/contact.js"></script>
+  <script src="js/app.js"></script>
+
+</body>
+</html>
