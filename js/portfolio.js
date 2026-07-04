@@ -6,6 +6,7 @@
 const Portfolio = {
   init() {
     this.filters();
+    this.search();
     this.tilt();
     this.projectLinks();
   },
@@ -15,11 +16,17 @@ const Portfolio = {
   filters() {
     const btns  = document.querySelectorAll('.filter-btn');
     const cards = [...document.querySelectorAll('.portfolio-card')];
+    const grid = document.querySelector('.portfolio-grid');
 
     btns.forEach(btn => {
       btn.addEventListener('click', () => {
         btns.forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
+
+        // Show the portfolio grid when a filter is clicked
+        if (grid) {
+          grid.classList.add('visible');
+        }
 
         const filter = btn.dataset.filter;
         let visIdx = 0;
@@ -48,10 +55,73 @@ const Portfolio = {
     });
   },
 
+  /* ── SEARCH ─────────────────────────── */
+
+  search() {
+    const searchInput = document.getElementById('portfolio-search');
+    const grid = document.querySelector('.portfolio-grid');
+    if (!searchInput) return;
+
+    searchInput.addEventListener('input', (e) => {
+      const searchTerm = e.target.value.toLowerCase().trim();
+      const cards = document.querySelectorAll('.portfolio-grid .portfolio-card');
+
+      // Show grid when searching
+      if (searchTerm !== '' && grid) {
+        grid.classList.add('visible');
+      } else if (searchTerm === '' && grid) {
+        grid.classList.remove('visible');
+      }
+
+      cards.forEach(card => {
+        const title = (card.dataset.title || '').toLowerCase();
+        const location = (card.dataset.location || '').toLowerCase();
+        
+        const match = title.includes(searchTerm) || location.includes(searchTerm) || searchTerm === '';
+
+        if (match) {
+          card.style.display = '';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  },
+
   /* ── PROJECT DETAIL LINKS ─────────── */
 
   projectLinks() {
-    document.querySelectorAll('.portfolio-card').forEach(card => {
+    // Featured portfolio cards (in .portfolio-featured-grid)
+    document.querySelectorAll('.portfolio-featured-grid .portfolio-card').forEach(card => {
+      card.style.cursor = 'pointer';
+      card.setAttribute('tabindex', '0');
+
+      const showSimilarProjects = () => {
+        const category = card.dataset.category;
+        const filterBtn = document.querySelector(`.filter-btn[data-filter="${category}"]`);
+        const grid = document.querySelector('.portfolio-grid');
+        
+        if (filterBtn) {
+          filterBtn.click(); // Trigger the filter
+          
+          // Scroll to the portfolio grid
+          setTimeout(() => {
+            grid.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }, 100);
+        }
+      };
+
+      card.addEventListener('click', showSimilarProjects);
+      card.addEventListener('keydown', event => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          showSimilarProjects();
+        }
+      });
+    });
+
+    // Main portfolio grid cards
+    document.querySelectorAll('.portfolio-grid .portfolio-card').forEach(card => {
       card.style.cursor = 'pointer';
       card.setAttribute('tabindex', '0');
 

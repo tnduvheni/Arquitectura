@@ -42,8 +42,18 @@
         gap:48px;
     }
 
+    .portfolio-wrapper {
+        grid-template-columns: 300px 1fr;
+        gap: 3rem;
+    }
+
+    .portfolio-featured-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
     .portfolio-grid{
-        grid-template-columns:repeat(2,1fr);
+        grid-template-columns:repeat(3,1fr);
+        gap:1rem;
     }
 
     :root{
@@ -60,8 +70,23 @@
         grid-template-columns:1fr;
     }
 
+    .portfolio-wrapper {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .portfolio-sidebar {
+        position: relative;
+        top: auto;
+    }
+
+    .portfolio-featured-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
     .portfolio-grid{
-        grid-template-columns:1fr;
+        grid-template-columns:repeat(2,1fr);
+        gap:1rem;
     }
 
     .about-stats{
@@ -98,6 +123,14 @@
         flex-direction:column;
         align-items:flex-start;
         gap:24px;
+    }
+
+    .portfolio-featured-grid{
+        grid-template-columns:1fr;
+    }
+
+    .portfolio-grid{
+        grid-template-columns:1fr;
     }
 
     .stat-card,
