@@ -16,7 +16,7 @@
 .slideshow-track {
   display: flex;
   gap: 2.5rem;
-  animation: slideshow 20s linear infinite;
+  animation: slideshow 15s linear infinite;
   will-change: transform;
   padding: 0 2rem;
   width: 100%;
