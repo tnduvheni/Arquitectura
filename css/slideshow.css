@@ -5,24 +5,12 @@
 /* ── LOGO SLIDESHOW ────────────────────── */
 
 .logo-slideshow {
-  background: #FAF7F2;
+  background: transparent;
   padding: 3rem 0;
   overflow: hidden;
   border-top: 1px solid rgba(0, 0, 0, 0.08);
   border-bottom: 1px solid rgba(0, 0, 0, 0.08);
   position: relative;
-}
-
-.logo-slideshow::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(
-    circle at 75% 35%,
-    rgba(192,57,43,.06),
-    transparent 55%
-  );
-  pointer-events: none;
 }
 
 .slideshow-track {
@@ -31,7 +19,7 @@
   animation: slideshow 20s linear infinite;
   will-change: transform;
   padding: 0 2rem;
-  max-width: 700px;
+  width: 100%;
   margin: 0 auto;
   position: relative;
   z-index: 1;
@@ -77,20 +65,12 @@
   filter: grayscale(0%);
 }
 
-/* Duplicate items for seamless loop */
-.slideshow-track::after {
-  content: '';
-  display: flex;
-  gap: 2.5rem;
-  position: relative;
-}
-
 @keyframes slideshow {
   0% {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(calc(-130px - 2.5rem));
+    transform: translateX(-50%);
   }
 }
 
@@ -164,15 +144,6 @@
     max-height: 36px;
   }
 
-  @keyframes slideshow {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(calc(-100px - 1.75rem));
-    }
-  }
-
   .full-image-container img {
     aspect-ratio: 4 / 3;
   }
@@ -195,15 +166,6 @@
 
   .slideshow-item img {
     max-height: 28px;
-  }
-
-  @keyframes slideshow {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(calc(-75px - 1.25rem));
-    }
   }
 
   .full-image-container img {

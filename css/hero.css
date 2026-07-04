@@ -11,8 +11,10 @@ HERO
 
     position:relative;
     min-height:100svh;
+    padding-top:var(--nav-height);
     display:flex;
     align-items:center;
+    justify-content:center;
     overflow:hidden;
     background:transparent;
 
@@ -55,7 +57,7 @@ OVERLAYS
     width:100%;
     min-height:100vh;
     background:
-        linear-gradient(90deg, rgba(0,0,0,.72) 0%, rgba(0,0,0,.28) 45%, rgba(0,0,0,.48) 100%),
+        linear-gradient(90deg, rgba(0,0,0,.48) 0%, rgba(0,0,0,.16) 45%, rgba(0,0,0,.28) 100%),
         radial-gradient(circle at top right, rgba(192,57,43,.16), transparent 42%);
     z-index:0;
     pointer-events:none;
@@ -80,24 +82,6 @@ OVERLAYS
     mix-blend-mode:screen;
 
 }
-
-.hero-overlay::after{
-
-    content:"";
-
-    position:absolute;
-
-    inset:0;
-
-    background:
-    linear-gradient(
-        to top,
-        rgba(8,8,8,.95),
-        rgba(8,8,8,.15)
-    );
-
-}
-
 /*==============================
 ARCHITECT GRID
 ==============================*/
