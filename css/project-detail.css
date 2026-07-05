@@ -52,6 +52,11 @@
   color: white;
 }
 
+.project-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(420px, 1fr));
+  gap: 1rem;
+}
 /* ── RESPONSIVE ────────────────────────── */
 
 @media (max-width: 1024px) {
@@ -76,6 +81,11 @@
 
   .map-info {
     padding: 0;
+  }
+}
+@media (max-width: 1600px) {
+  .project-gallery-grid {
+    grid-template-columns: 1fr;
   }
 }
 
