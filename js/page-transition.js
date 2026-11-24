@@ -71,12 +71,13 @@ document.addEventListener('DOMContentLoaded', () => {
         setBox({ top: rect.top, left: rect.left, width: rect.width, height: rect.height });
         window.setTimeout(() => {
           layer.classList.remove('is-active', 'is-handoff', 'is-settling');
+          layer.style.pointerEvents = 'none';
           if (title) title.textContent = '';
         }, Math.max(720, titleDuration + 120));
       }));
     };
     window.addEventListener('arq:ready', reveal, { once: true });
-    window.setTimeout(reveal, 3200);
+    window.setTimeout(reveal, 1800);
   } else if (fading && motionOK) {
     const titleDuration = typeTitle(fading.title);
     layer.classList.add('is-active', 'is-fading', 'is-fading-out');
@@ -84,10 +85,14 @@ document.addEventListener('DOMContentLoaded', () => {
       layer.classList.remove('is-fading-out');
       window.setTimeout(() => {
         layer.classList.remove('is-active', 'is-fading', 'is-fading-out');
+        layer.style.pointerEvents = 'none';
         if (title) title.textContent = '';
       }, Math.max(460, titleDuration + 120));
     }, { once: true });
-    window.setTimeout(() => layer.classList.remove('is-active', 'is-fading', 'is-fading-out'), 3000);
+    window.setTimeout(() => {
+      layer.classList.remove('is-active', 'is-fading', 'is-fading-out');
+      layer.style.pointerEvents = 'none';
+    }, 3000);
   }
 
   document.addEventListener('click', event => {

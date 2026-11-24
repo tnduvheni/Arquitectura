@@ -679,101 +679,7 @@ margin-bottom:3rem;
 
 }
     
-/*==========================================
-CURSOR
-==========================================*/
 
-body{
-
-    cursor:none;
-
-}
-
-#cursor{
-
-    position:fixed;
-
-    inset:0;
-
-    pointer-events:none;
-
-    z-index:99999;
-
-}
-
-.cursor-dot{
-
-    position:fixed;
-
-    width:8px;
-
-    height:8px;
-
-    background:white;
-
-    border-radius:50%;
-
-    transform:translate(-50%,-50%);
-
-}
-
-.cursor-ring{
-
-    position:fixed;
-
-    width:42px;
-
-    height:42px;
-
-    border:1px solid rgba(255,255,255,.45);
-
-    border-radius:50%;
-
-    transform:translate(-50%,-50%);
-
-    transition:
-
-        width .35s,
-
-        height .35s,
-
-        background .35s,
-
-        border-color .35s;
-
-}
-
-.cursor-text{
-
-    position:fixed;
-
-    transform:translate(-50%,-50%);
-
-    font-size:.65rem;
-
-    font-weight:600;
-
-    letter-spacing:.18em;
-
-    color:white;
-
-    text-transform:uppercase;
-
-    white-space:nowrap;
-
-}
-
-#cursor.active .cursor-ring{
-
-    width:80px;
-
-    height:80px;
-
-    background:rgba(192,57,43,.15);
-
-    border-color:var(--color-red);
-
-}
     /*==========================================
 ABOUT
 ==========================================*/
@@ -1172,3 +1078,145 @@ left:27px;
 }
 }
 
+
+/*==============================
+STUDIO COPY (About section)
+==============================*/
+
+.studio-copy {
+  max-width: 560px;
+  padding: 3rem 3rem 3rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.studio-disciplines {
+  display: flex;
+  flex-direction: column;
+  gap: .9rem;
+  margin-top: 2.4rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.studio-disciplines span {
+  color: var(--color-grey);
+  font-size: .82rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+
+.studio-disciplines span b {
+  color: var(--color-white);
+  font-weight: 500;
+  margin-left: .5rem;
+}
+
+/*==============================
+SERVICE ROOMS
+==============================*/
+
+.service-rooms {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  margin-top: 4rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.service-room {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2.4rem 2rem;
+  border-right: 1px solid var(--color-border);
+  transition: background var(--transition-fast);
+  gap: 1.4rem;
+}
+
+.service-room:last-child {
+  border-right: none;
+}
+
+.service-room:hover {
+  background: rgba(255, 255, 255, .03);
+}
+
+.service-room > span {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 3.5rem;
+  color: rgba(255, 255, 255, .07);
+  line-height: 1;
+  pointer-events: none;
+}
+
+.service-room > div p:first-child {
+  color: var(--color-red);
+  font-size: .72rem;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  margin-bottom: .6rem;
+}
+
+.service-room > div h3 {
+  font-size: 1.4rem;
+  font-weight: 400;
+  margin-bottom: .8rem;
+  color: var(--color-white);
+}
+
+.service-room > div p:last-child {
+  color: var(--color-grey);
+  font-size: .9rem;
+  line-height: 1.7;
+}
+
+.service-room-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--color-border);
+  color: var(--color-white);
+  font-size: 1rem;
+  align-self: flex-start;
+  transition: all var(--transition-fast);
+}
+
+.service-room:hover .service-room-cta {
+  background: var(--color-red);
+  border-color: var(--color-red);
+}
+
+@media (max-width: 1100px) {
+  .service-rooms {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .service-room:nth-child(2) {
+    border-right: none;
+  }
+  .service-room:nth-child(1),
+  .service-room:nth-child(2) {
+    border-bottom: 1px solid var(--color-border);
+  }
+}
+
+@media (max-width: 600px) {
+  .service-rooms {
+    grid-template-columns: 1fr;
+  }
+  .service-room {
+    border-right: none;
+    border-bottom: 1px solid var(--color-border);
+  }
+  .service-room:last-child {
+    border-bottom: none;
+  }
+}

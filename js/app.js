@@ -23,10 +23,9 @@ const ARQ = {
   /* ── LOADER ─────────────────────────────── */
 
   loader() {
-    const fill = document.querySelector('.loader-bar-fill');
+    const typingEl = document.getElementById('loader-typing');
 
-    // Route handoffs already carry their own visual transition; don't insert
-    // another blocking loading screen between the two pages.
+    // Route handoffs already carry their own visual transition; skip the loader.
     if (window.ARQ_SKIP_LOADER) {
       this.loaderEl?.classList.add('hidden');
       document.body.classList.remove('is-loading');
@@ -34,32 +33,36 @@ const ARQ = {
       return;
     }
 
-    const finish = () => {
-      const start    = performance.now();
-      const duration = 1400;
+    const phrase = 'ARQ Arquitectura.';
+    const charDelay = 72;   // ms per character
+    const holdAfter = 480;  // pause after typing finishes before hiding
 
-      const tick = (now) => {
-        const p      = Math.min((now - start) / duration, 1);
-        const eased  = 1 - Math.pow(1 - p, 3);
-
-        if (fill) fill.style.width = `${eased * 100}%`;
-
-        if (p < 1) {
-          requestAnimationFrame(tick);
+    const typeOut = (onDone) => {
+      if (!typingEl) { onDone(); return; }
+      typingEl.textContent = '';
+      typingEl.dataset.typing = 'true';
+      const chars = Array.from(phrase);
+      let i = 0;
+      const tick = () => {
+        typingEl.textContent += chars[i++] || '';
+        if (i < chars.length) {
+          window.setTimeout(tick, charDelay);
         } else {
-          setTimeout(() => {
-            this.loaderEl.classList.add('hidden');
-            document.body.classList.remove('is-loading');
-            // Signal other modules (hero, etc.) that loader is gone
-            window.dispatchEvent(new CustomEvent('arq:ready'));
-          }, 220);
+          delete typingEl.dataset.typing;
+          window.setTimeout(onDone, holdAfter);
         }
       };
-
-      requestAnimationFrame(tick);
+      tick();
     };
 
-    // Fire as soon as everything is loaded; if already loaded, fire now
+    const finish = () => {
+      typeOut(() => {
+        this.loaderEl.classList.add('hidden');
+        document.body.classList.remove('is-loading');
+        window.dispatchEvent(new CustomEvent('arq:ready'));
+      });
+    };
+
     if (document.readyState === 'complete') {
       finish();
     } else {

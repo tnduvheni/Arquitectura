@@ -37,10 +37,7 @@
   <!-- ── LOADER ── -->
   <div id="loader" role="status" aria-label="Loading">
     <div class="loader-content">
-      <img src="assets/images/logo.png" alt="ARQ Arquitectura" class="loader-logo-img">
-      <div class="loader-bar" aria-hidden="true">
-        <span class="loader-bar-fill"></span>
-      </div>
+      <p class="loader-typing" id="loader-typing" aria-live="polite"></p>
     </div>
   </div>
 
@@ -711,11 +708,19 @@
     </section>
   </div>
 
+  <!-- ── CUSTOM CURSOR ── -->
+  <div id="cursor" aria-hidden="true">
+    <div class="cursor-dot"></div>
+    <div class="cursor-ring"></div>
+    <div class="cursor-text"></div>
+  </div>
+
   <!-- ── LIBRARIES ── -->
   <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
 
   <!-- ── SCRIPTS ── -->
+  <script src="js/cursor.js"></script>
   <script src="js/page-transition.js"></script>
   <script src="js/navigation.js"></script>
   <script src="js/hero.js"></script>
