@@ -1,0 +1,20 @@
+/* Concrete threshold and scroll-led passage through project imagery. */
+.walkthrough{height:220vh;padding:0;position:relative;background:var(--color-concrete);color:#f5f5f3}
+.walkthrough-stage{position:sticky;top:0;height:100svh;min-height:560px;overflow:hidden;isolation:isolate;background:radial-gradient(ellipse at 50% 45%,rgba(255,255,255,.13),transparent 48%),repeating-linear-gradient(0deg,rgba(25,24,22,.035) 0 1px,transparent 1px 5px),linear-gradient(110deg,var(--color-concrete-deep),var(--color-concrete) 48%,var(--color-concrete-mid))}
+.walkthrough-stage:before{content:"";position:absolute;inset:0;z-index:4;pointer-events:none;background:linear-gradient(90deg,rgba(8,8,8,.38),transparent 48%,rgba(8,8,8,.2))}
+.walkthrough-doorway{position:absolute;z-index:3;inset:7vh 10vw 0;border:clamp(16px,3vw,48px) solid color-mix(in srgb,var(--color-concrete-light) 92%,transparent);border-bottom:0;box-shadow:inset 0 0 0 1px rgba(30,29,27,.28),0 0 0 1px rgba(255,255,255,.14),0 30px 80px rgba(0,0,0,.2);pointer-events:none}
+.walkthrough-scene{position:absolute;inset:7vh 10vw 0;margin:0;overflow:hidden;opacity:0;transform:scale(1.07);transition:opacity 1s ease,transform 1.8s cubic-bezier(.2,.7,.2,1)}
+.walkthrough-scene.is-active{opacity:1;transform:scale(1)}
+.walkthrough-scene:after{content:"";position:absolute;inset:35% 0 0;background:linear-gradient(transparent,rgba(0,0,0,.66))}
+.walkthrough-scene img{width:100%;height:100%;object-fit:cover;filter:saturate(.78) contrast(1.04)}
+.walkthrough-scene figcaption{position:absolute;z-index:2;left:clamp(24px,7vw,110px);bottom:clamp(40px,10vh,120px);display:grid;gap:12px;max-width:680px}
+.walkthrough-scene figcaption span,.walkthrough-index{font:500 .68rem/1.4 var(--font-body);letter-spacing:.22em;text-transform:uppercase}
+.walkthrough-scene figcaption strong{font:300 clamp(2.8rem,7vw,7rem)/.95 var(--font-heading);letter-spacing:-.035em}
+.walkthrough-index{position:absolute;z-index:5;left:24px;right:24px;bottom:24px;display:flex;align-items:center;gap:16px;color:rgba(255,255,255,.72)}
+.walkthrough-index i{height:1px;flex:1;background:rgba(255,255,255,.4)}
+.walkthrough-beat{position:absolute;left:0;right:0;height:73.333vh;pointer-events:none}
+.walkthrough-beat:nth-child(2){top:0}.walkthrough-beat:nth-child(3){top:73.333vh}.walkthrough-beat:nth-child(4){top:146.666vh}
+.walkthrough-stage[data-scene="1"] .walkthrough-doorway{inset:5vh 18vw 0}
+.walkthrough-stage[data-scene="2"] .walkthrough-doorway{inset:0 4vw 0}
+@media(max-width:700px){.walkthrough{height:auto}.walkthrough-stage{position:relative;top:auto;height:auto;min-height:0;overflow:visible;display:grid;background:var(--color-concrete-deep)}.walkthrough-stage:before{position:absolute;inset:0;z-index:1}.walkthrough-doorway,.walkthrough-index,.walkthrough-beat{display:none}.walkthrough-scene,.walkthrough-scene.is-active{position:relative;inset:auto;height:76svh;min-height:480px;opacity:1;transform:none}.walkthrough-scene:not(.is-active){opacity:1;transform:none}.walkthrough-scene figcaption{left:24px;bottom:42px}.walkthrough-scene:after{inset:30% 0 0}}
+@media(prefers-reduced-motion:reduce){.walkthrough-scene{transition:none}}

@@ -538,27 +538,49 @@ IMAGE REVEAL
 ==============================*/
 
 .image-reveal{
-
     overflow:hidden;
+    position:relative;
+    isolation:isolate;
+}
+
+.image-reveal::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    z-index:2;
+    background:var(--color-red);
+    transform:scaleY(0);
+    transform-origin:bottom;
+    transition:transform .9s cubic-bezier(.76,0,.24,1);
+    pointer-events:none;
+}
+
+.image-reveal-pending:not(.visible)::after{transform:scaleY(1)}
+
+.image-reveal img{
+    transform:scale(1.08);
+    transition:transform 1.4s cubic-bezier(.2,.7,.2,1);
+    will-change:transform;
 
 }
 
-.image-reveal img{
-
-    /* start slightly zoomed and softly blurred for a smooth "coming into focus" effect */
-    transform:translateY(12px) scale(1.06);
-    filter:blur(8px);
-    transition:transform 1.0s var(--ease), filter 1.0s var(--ease), opacity 1.0s var(--ease);
-    opacity:0.92;
-
+.image-reveal.visible::after{
+    transform:scaleY(0);
 }
 
 .image-reveal.visible img{
+    transform:scale(1);
 
-    transform:translateY(0) scale(1);
-    filter:blur(0);
-    opacity:1;
+}
 
+@media (prefers-reduced-motion: reduce){
+    .image-reveal::after,
+    .image-reveal img{
+        transition-duration:.01ms;
+    }
+    .image-reveal::after{ transform:scaleY(0); }
+    .image-reveal-pending:not(.visible)::after{ transform:scaleY(0); }
+    .image-reveal img{ transform:scale(1); }
 }
 
 /*==============================

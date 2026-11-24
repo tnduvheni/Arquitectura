@@ -19,9 +19,17 @@ COLORS
 --color-grey-dark:#6F6F6F;
 --color-grey-light:#D5D5D5;
 
---color-red:#C0392B;
---color-red-dark:#8E2A20;
---color-red-light:#E05345;
+--color-red:#9F4035;
+--color-red-dark:#6D2B24;
+--color-red-light:#BD6A5D;
+
+/* Warm concrete, charcoal and restrained oxide red form the studio palette. */
+--color-concrete:#A7A49C;
+--color-concrete-light:#D0CCC2;
+--color-concrete-mid:#88857D;
+--color-concrete-deep:#696761;
+--color-ink:#171716;
+--color-oxide:#6D2B24;
 
 --color-border:#232323;
 

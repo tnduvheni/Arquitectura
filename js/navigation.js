@@ -25,35 +25,54 @@ const Navigation = {
   },
 
   mobileToggle() {
-    if (!this.menuBtn) return;
+    if (!this.menuBtn || !this.mobileMenu) return;
 
     this.menuBtn.addEventListener('click', () => {
       const open = this.mobileMenu.classList.toggle('active');
       this.menuBtn.classList.toggle('active', open);
       this.menuBtn.setAttribute('aria-expanded', String(open));
+      this.menuBtn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
       document.body.classList.toggle('menu-open', open);
+      if (open) this.mobileMenu.querySelector('a')?.focus();
     });
 
     // Close on any nav link click
     this.allLinks.forEach(link => {
-      link.addEventListener('click', () => this.closeMenu());
+      link.addEventListener('click', () => {
+        this.closeMenu();
+        this.menuBtn.focus();
+      });
     });
 
     // Close on Escape
     document.addEventListener('keydown', e => {
-      if (e.key === 'Escape') this.closeMenu();
+      if (e.key === 'Escape' && this.mobileMenu.classList.contains('active')) {
+        this.closeMenu();
+        this.menuBtn.focus();
+      }
+      if (e.key === 'Tab' && this.mobileMenu.classList.contains('active')) {
+        const links = [...this.mobileMenu.querySelectorAll('a')];
+        const first = links[0];
+        const last = links[links.length - 1];
+        if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+        else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+      }
     });
+
+    window.addEventListener('resize', () => this.closeMenu(), { passive: true });
   },
 
   closeMenu() {
     this.mobileMenu?.classList.remove('active');
     this.menuBtn?.classList.remove('active');
     this.menuBtn?.setAttribute('aria-expanded', 'false');
+    this.menuBtn?.setAttribute('aria-label', 'Open menu');
     document.body.classList.remove('menu-open');
   },
 
   activeLinks() {
     const sections = document.querySelectorAll('section[id]');
+    if (!sections.length || !('IntersectionObserver' in window)) return;
 
     const io = new IntersectionObserver(entries => {
       entries.forEach(entry => {

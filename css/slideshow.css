@@ -19,7 +19,7 @@
   animation: slideshow 15s linear infinite;
   will-change: transform;
   padding: 0 2rem;
-  width: 100%;
+  width: max-content;
   margin: 0 auto;
   position: relative;
   z-index: 1;

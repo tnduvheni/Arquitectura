@@ -9,11 +9,10 @@ const ARQ = {
     this.cacheDOM();
     this.year();
     this.loader();       // sets up loader; hero waits for loaderReady event
-    this.initLenis();    // Lenis + GSAP ScrollTrigger sync
     this.bindEvents();   // anchor smooth-scroll, resize
     this.scrollProgress();
 
-    console.log('%cARQ Arquitectura', 'color:#C0392B;font-size:16px;font-weight:bold;');
+    console.log('%cARQ Arquitectura', 'color:#9F4035;font-size:16px;font-weight:bold;');
   },
 
   cacheDOM() {
@@ -25,6 +24,15 @@ const ARQ = {
 
   loader() {
     const fill = document.querySelector('.loader-bar-fill');
+
+    // Route handoffs already carry their own visual transition; don't insert
+    // another blocking loading screen between the two pages.
+    if (window.ARQ_SKIP_LOADER) {
+      this.loaderEl?.classList.add('hidden');
+      document.body.classList.remove('is-loading');
+      window.dispatchEvent(new CustomEvent('arq:ready'));
+      return;
+    }
 
     const finish = () => {
       const start    = performance.now();
@@ -59,33 +67,6 @@ const ARQ = {
     }
   },
 
-  /* ── LENIS + SCROLLTRIGGER SYNC ────────── */
-
-  initLenis() {
-    if (typeof Lenis === 'undefined') return;
-
-    const lenis = new Lenis({
-      duration:        1.25,
-      smoothWheel:     true,
-      touchMultiplier: 1.4,
-      easing:          t => 1 - Math.pow(1 - t, 4),
-    });
-
-    // Proper sync: use GSAP ticker so ScrollTrigger positions
-    // are always computed from Lenis's virtual scroll position.
-    if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
-      gsap.registerPlugin(ScrollTrigger);
-      lenis.on('scroll', ScrollTrigger.update);
-      gsap.ticker.add(time => lenis.raf(time * 1000));
-      gsap.ticker.lagSmoothing(0);
-    } else {
-      const raf = time => { lenis.raf(time); requestAnimationFrame(raf); };
-      requestAnimationFrame(raf);
-    }
-
-    this.lenis = lenis;
-  },
-
   /* ── SCROLL PROGRESS BAR ───────────────── */
 
   scrollProgress() {
@@ -111,7 +92,7 @@ const ARQ = {
       document.body.classList.remove('menu-open');
     }, { passive: true });
 
-    // Intercept all anchor links and route through Lenis.scrollTo
+    // Keep anchor navigation native so trackpads and sticky scenes stay responsive.
     document.querySelectorAll('a[href^="#"]').forEach(link => {
       link.addEventListener('click', e => {
         const id     = link.getAttribute('href');
@@ -119,11 +100,7 @@ const ARQ = {
         const target = document.querySelector(id);
         if (!target) return;
         e.preventDefault();
-        if (this.lenis) {
-          this.lenis.scrollTo(target, { offset: -80, duration: 1.4 });
-        } else {
-          target.scrollIntoView({ behavior: 'smooth' });
-        }
+        target.scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
       });
     });
   },

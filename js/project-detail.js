@@ -40,7 +40,7 @@ const ProjectDetail = {
       latitude: -25.7461,
       longitude: 28.2524,
       description: 'An inward-looking home organised around a central courtyard, bringing light and climate into daily life.',
-      image: 'assets/images/portfolio/Residence/IMG-20260628-WA0040.jpg',
+      image: 'assets/images/featured/IMG-20260628-WA0044.jpg',
       tags: ['Residential', 'Courtyard', '2024'],
       gallery: [
         'assets/images/portfolio/Residence/IMG-20260628-WA0038.jpg',
@@ -56,7 +56,7 @@ const ProjectDetail = {
       latitude: -26.2041,
       longitude: 28.0473,
       description: 'A spatial concept exploring layered terraces, framed views and a lightweight pavilion structure.',
-      image: 'assets/images/portfolio/Residence/IMG-20260628-WA0042.jpg',
+      image: 'assets/images/featured/IMG-20260628-WA0052.jpg',
       tags: ['Concept', 'Visualisation', '2024'],
       gallery: [
         'assets/images/portfolio/Residence/IMG-20260628-WA0038.jpg',
@@ -208,16 +208,25 @@ const ProjectDetail = {
       ]
     },
 
-    /*
-     * The projects below match the newer cards added to the #portfolio grid
-     * in index.html. Their folders (SPA, House Madhie, HOUSE MPHO, House NG,
-     * RIASHUMISANA, JANE FURSE, RIBOLLA INN, MAMI LIFE, MTG HQ, MTG LTT,
-     * MTG MAKHONDE) weren't included in the project files I was given, so I
-     * can't see what other photos live inside them. `gallery` is left empty
-     * for these — drop in the extra filenames from each folder and the
-     * gallery grid will pick them up automatically, no other code changes
-     * needed.
-     */
+    // Case studies for the current portfolio cards.
+    {
+      slug: 'house-madhie',
+      title: 'House Madhie',
+      category: 'Residential',
+      type: 'Residential',
+      location: 'South Africa',
+      latitude: -26.2041,
+      longitude: 28.0473,
+      description: 'A warm, contemporary home composed through framed views, layered materials and a close relationship to its landscape.',
+      image: 'assets/images/portfolio/House Madhie/F6 (1).JPG',
+      tags: ['Residential', 'Private Home'],
+      gallery: [
+        'assets/images/portfolio/House Madhie/F1 (2).JPG',
+        'assets/images/portfolio/House Madhie/F2 (1).JPG',
+        'assets/images/portfolio/House Madhie/f7.jpg',
+        'assets/images/portfolio/House Madhie/f8.jpg'
+      ]
+    },
     {
       slug: 'house-mpho',
       title: 'House Mpho',
@@ -227,10 +236,9 @@ const ProjectDetail = {
       latitude: -25.7368,
       longitude: 28.2703,
       description: 'A residence composed around natural light and a considered material palette.',
-      image: 'assets/images/portfolio/HOUSE MPHO/IMG_4455.jpeg',
+      image: 'assets/images/portfolio/HOUSE MPHO/IMG_4419.jpeg',
       tags: ['Residential', '2025'],
-      gallery: ['assets/images/portfolio/HOUSE MPHO/IMG_4419.jpeg','assets/images/portfolio/HOUSE MPHO/IMG_4421.jpeg','assets/images/portfolio/HOUSE MPHO/IMG_4448.jpeg','assets/images/portfolio/HOUSE MPHO/IMG_4455.jpeg',
-        'assets/images/portfolio/HOUSE MPHO/IMG_4456.jpeg','assets/images/portfolio/HOUSE MPHO/IMG_4459.jpeg','assets/images/portfolio/HOUSE MPHO/IMG_4462.jpeg'
+      gallery: ['assets/images/portfolio/HOUSE MPHO/IMG_4419.jpeg','assets/images/portfolio/HOUSE MPHO/IMG_4421.jpeg'
       ]
     },
     {
@@ -238,7 +246,7 @@ const ProjectDetail = {
       title: 'House NG',
       category: 'Residential',
       type: 'Residential',
-      location: 'Waterkloof, Pretoria',
+      location: 'South Africa',
       latitude: -25.7368,
       longitude: 28.2703,
       description: 'A home shaped by its site, balancing openness with privacy.',
@@ -276,13 +284,13 @@ const ProjectDetail = {
       description: 'A commercial complex concept study focused on community and civic presence.',
       image: 'assets/images/portfolio/JANE FURSE/JF_Photo - 4.jpg',
       tags: ['Commercial', 'Concept'],
-      gallery: ['assets/images/portfolio/JANE FURSE/JF_Photo - 4.jpg','ARQfixed/assets/images/portfolio/JANE FURSE/JF_Photo - 6.jpg','ARQfixed/assets/images/portfolio/JANE FURSE/JF_Photo - 7.jpg',
-        'ARQfixed/assets/images/portfolio/JANE FURSE/JF_Photo - 10.jpg'
+      gallery: ['assets/images/portfolio/JANE FURSE/JF_Photo - 4.jpg','assets/images/portfolio/JANE FURSE/JF_Photo - 6.jpg','assets/images/portfolio/JANE FURSE/JF_Photo - 7.jpg',
+        'assets/images/portfolio/JANE FURSE/JF_Photo - 10.jpg'
       ]
     },
     {
       slug: 'ribolla-inn',
-      title: 'Riabolla Inn',
+      title: 'Ribolla Inn',
       category: 'Commercial',
       type: 'Commercial',
       location: 'Concept Study',
@@ -309,10 +317,10 @@ const ProjectDetail = {
       gallery: ['assets/images/portfolio/SPA/F1 (2).jpg',
         'assets/images/portfolio/SPA/F2 (1).jpg',
         'assets/images/portfolio/SPA/f3.jpg',
-        'assets/images/portfolio/SPA/T_Photo-1.jpg',
-        'assets/images/portfolio/SPA/T_Photo-3.jpg',
-        'assets/images/portfolio/SPA/T_Photo-5.jpg',
-        'assets/images/portfolio/SPA/T_Photo-8.jpg'
+        'assets/images/portfolio/SPA/T_Photo - 1.jpg',
+        'assets/images/portfolio/SPA/T_Photo - 3.jpg',
+        'assets/images/portfolio/SPA/T_Photo - 5.jpg',
+        'assets/images/portfolio/SPA/T_Photo - 8.jpg'
        ]
     },
     {
@@ -326,7 +334,8 @@ const ProjectDetail = {
       description: 'A commercial concept study centred on wellbeing and everyday ritual.',
       image: 'assets/images/portfolio/MAMI LIFE/ChatGPT Image Jun 3, 2026, 07_52_45 PM.png',
       tags: ['Commercial', 'Concept'],
-      gallery: ['assets/images/portfolio/MAMI LIFE/ChatGPT Image Jun 3, 2026, 07_46_51 PM.png','assets/images/portfolio/MAMI LIFE/ChatGPT Image Jun 3, 2026, 07_46_49 PM.png',
+      gallery: ['assets/images/portfolio/MAMI LIFE/ChatGPT Image Jun 3, 2026, 07_46_51 PM.png',
+          'assets/images/portfolio/MAMI LIFE/ChatGPT Image Jun 3, 2026, 07_48_49 PM.png',
           'assets/images/portfolio/MAMI LIFE/ChatGPT Image Jun 3, 2026, 07_52_45 PM.png'
       ]
     },
@@ -385,8 +394,9 @@ const ProjectDetail = {
     const params = new URLSearchParams(window.location.search);
     const slug = params.get('project');
     const project = this.projects.find(item => item.slug === slug) || this.projects[0];
-
     document.title = `ARQ Arquitectura | ${project.title}`;
+    const descriptionTag = document.querySelector('meta[name="description"]');
+    if (descriptionTag) descriptionTag.content = `${project.title} — ${project.description}`;
 
     const image = document.getElementById('project-image');
     const title = document.getElementById('project-detail-heading');
@@ -414,7 +424,20 @@ const ProjectDetail = {
       });
     }
 
-    // Update map with project coordinates
+    const sequence = [
+      'hillside-residence', 'courtyard-house', 'terrace-pavilion', 'spa', 'house-madhie',
+      'house-mpho', 'house-ng', 'riashumisana', 'ribolla-inn', 'mami-life', 'mtg-hq',
+      'mtg-ltt', 'mtg-makhonde', 'stone-and-steel-house', 'jane-furse', 'garden-residence',
+      'the-black-pavilion', 'the-ridge', 'heritage-court',
+    ].map(item => this.projects.find(candidate => candidate.slug === item)).filter(Boolean);
+    const currentIndex = sequence.findIndex(item => item.slug === project.slug);
+    const nextProject = sequence[(currentIndex + 1 + sequence.length) % sequence.length];
+    const nextLink = document.getElementById('next-project-link');
+    const nextTitle = document.getElementById('next-project-title');
+    if (nextLink && nextProject) nextLink.href = `project-detail.html?project=${encodeURIComponent(nextProject.slug)}`;
+    if (nextTitle && nextProject) nextTitle.textContent = nextProject.title;
+
+    // Update the project-specific site image and location copy.
     this.updateMap(project);
 
     // Populate the "more from this project" thumbnail grid
@@ -422,35 +445,29 @@ const ProjectDetail = {
   },
 
   updateMap(project) {
-    // Update map location text
+    const isConcept = /^(Concept Study|South Africa|Limpopo)$/i.test(project.location);
+    const siteNote = project.location === 'Concept Study'
+      ? 'Concept study · site to be confirmed'
+      : 'Project site to be confirmed';
+    // Update project area copy.
     const locationText = document.getElementById('map-location-text');
     if (locationText) {
-      locationText.textContent = project.location;
+      locationText.textContent = isConcept ? siteNote : project.location;
     }
 
     // Update address
     const addressEl = document.getElementById('map-address');
     if (addressEl) {
-      addressEl.textContent = project.location;
+      addressEl.textContent = isConcept ? 'Location to be confirmed' : project.location;
     }
 
-    // Update coordinates
-    const coordinatesEl = document.getElementById('map-coordinates');
-    if (coordinatesEl) {
-      const lat = project.latitude.toFixed(4);
-      const lon = project.longitude.toFixed(4);
-      const latDir = project.latitude >= 0 ? 'N' : 'S';
-      const lonDir = project.longitude >= 0 ? 'E' : 'W';
-      coordinatesEl.textContent = `${Math.abs(project.latitude).toFixed(4)}° ${latDir}, ${Math.abs(project.longitude).toFixed(4)}° ${lonDir}`;
+    const siteImage = document.getElementById('project-site-image');
+    if (siteImage) {
+      siteImage.src = project.image;
+      siteImage.alt = `${project.title} — architectural context`;
     }
-
-    // Update map iframe URL with new coordinates
-    const mapIframe = document.getElementById('project-map');
-    if (mapIframe && project.latitude && project.longitude) {
-      const zoomLevel = project.location === 'Concept Study' ? 3 : 15;
-      const embedUrl = `https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d${15000 / zoomLevel}!2d${project.longitude}!3d${project.latitude}!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0!2s${project.location}!5e0!3m2!1sen!2s!4v1234567890`;
-      mapIframe.src = embedUrl;
-    }
+    const siteLabel = document.getElementById('site-visual-location');
+    if (siteLabel) siteLabel.textContent = isConcept ? 'Site to be confirmed' : project.location;
   },
 
   /*
@@ -480,10 +497,21 @@ const ProjectDetail = {
       img.src = src;
       img.alt = `${project.title} — additional view ${index + 1}`;
       img.loading = 'lazy';
+      img.tabIndex = 0;
+      img.setAttribute('role', 'button');
+      img.setAttribute('aria-label', `Open ${project.title} image ${index + 1}`);
+      img.addEventListener('keydown', event => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          img.click();
+        }
+      });
 
       figure.appendChild(img);
       grid.appendChild(figure);
     });
+
+    if (typeof Reveal !== 'undefined') Reveal.imageReveal();
   }
 };
 

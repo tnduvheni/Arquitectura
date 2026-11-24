@@ -176,11 +176,8 @@ REVEAL STATES
 ==============================*/
 
 .reveal{
-
-    opacity:0;
-
-    transform:translateY(70px);
-
+    opacity:1;
+    transform:none;
     transition:
 
         opacity .9s var(--ease),
@@ -198,10 +195,8 @@ REVEAL STATES
 }
 
 .reveal-left{
-
-    opacity:0;
-
-    transform:translateX(-60px) scale(.995);
+    opacity:1;
+    transform:none;
 
     transition:transform .85s cubic-bezier(.2,.9,.3,1), opacity .85s cubic-bezier(.2,.9,.3,1);
 
@@ -216,10 +211,8 @@ REVEAL STATES
 }
 
 .reveal-right{
-
-    opacity:0;
-
-    transform:translateX(60px) scale(.995);
+    opacity:1;
+    transform:none;
 
     transition:transform .85s cubic-bezier(.2,.9,.3,1), opacity .85s cubic-bezier(.2,.9,.3,1);
 
@@ -232,6 +225,10 @@ REVEAL STATES
     transform:translateX(0) scale(1);
 
 }
+
+.reveal-pending.reveal{opacity:0;transform:translateY(48px)}
+.reveal-pending.reveal-left{opacity:0;transform:translateX(-48px) scale(.995)}
+.reveal-pending.reveal-right{opacity:0;transform:translateX(48px) scale(.995)}
 
 .scale-in{
 
@@ -293,6 +290,19 @@ HOVER LIFT
 
     box-shadow:var(--shadow-lg);
 
+}
+
+@media (prefers-reduced-motion: reduce){
+    *,*::before,*::after{
+        scroll-behavior:auto!important;
+        animation-duration:.01ms!important;
+        animation-iteration-count:1!important;
+        transition-duration:.01ms!important;
+    }
+    .reveal,.reveal-left,.reveal-right,.scale-in{
+        opacity:1;
+        transform:none;
+    }
 }
 
 /*==============================

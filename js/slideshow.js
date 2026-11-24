@@ -17,6 +17,8 @@ const Slideshow = {
     const items = track.querySelectorAll('.slideshow-item');
     items.forEach(item => {
       const clone = item.cloneNode(true);
+      clone.setAttribute('aria-hidden', 'true');
+      clone.querySelectorAll('img').forEach(img => { img.alt = ''; img.setAttribute('loading', 'eager'); });
       track.appendChild(clone);
     });
   },

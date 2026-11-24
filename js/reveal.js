@@ -12,10 +12,16 @@ const Reveal = {
 
   reveals() {
     const items = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) {
+      items.forEach(el => el.classList.add('active'));
+      return;
+    }
+    items.forEach(el => el.classList.add('reveal-pending'));
     const io = new IntersectionObserver(entries => {
       entries.forEach(e => {
         if (e.isIntersecting) {
           e.target.classList.add('active');
+          e.target.classList.remove('reveal-pending');
           io.unobserve(e.target);   // only animate once
         }
       });
@@ -25,6 +31,7 @@ const Reveal = {
 
   counters() {
     const stats = document.querySelectorAll('[data-count]');
+    if (!stats.length || !('IntersectionObserver' in window)) return;
     const io = new IntersectionObserver(entries => {
       entries.forEach(e => {
         if (!e.isIntersecting) return;
@@ -47,11 +54,24 @@ const Reveal = {
 
   // CSS-driven image-reveal using .image-reveal / .visible
   imageReveal() {
-    const imgs = document.querySelectorAll('.image-reveal');
+    // Apply the image treatment to the main project imagery without requiring
+    // every image in the portfolio markup to carry an animation class.
+    const imgs = document.querySelectorAll(
+      '.image-reveal, .featured-image, .portfolio-image, .full-image-container, .project-gallery-item'
+    );
+    imgs.forEach(el => {
+      el.classList.add('image-reveal', 'image-reveal-pending');
+    });
+    if (!('IntersectionObserver' in window)) {
+      imgs.forEach(el => el.classList.add('visible'));
+      imgs.forEach(el => el.classList.remove('image-reveal-pending'));
+      return;
+    }
     const io = new IntersectionObserver(entries => {
       entries.forEach(e => {
         if (e.isIntersecting) {
           e.target.classList.add('visible');
+          e.target.classList.remove('image-reveal-pending');
           io.unobserve(e.target);
         }
       });

@@ -344,7 +344,7 @@ header.scrolled .navbar{
     background:linear-gradient(
         90deg,
         var(--color-red),
-        #ff7565
+        var(--color-red-light)
     );
 
     z-index:99999;

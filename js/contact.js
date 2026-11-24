@@ -24,20 +24,23 @@ const Contact = {
 
             e.preventDefault();
 
-            const button = this.form.querySelector("button[type='submit']");
-            const original = button.textContent;
+            if (!this.form.reportValidity()) return;
 
-            button.textContent = "Message Sent";
-            button.disabled = true;
+            const values = new FormData(this.form);
+            const status = this.form.querySelector('.contact-form-status');
+            const subject = values.get('subject') || 'New architecture enquiry';
+            const body = [
+                `Name: ${values.get('name')}`,
+                `Email: ${values.get('email')}`,
+                `Project type: ${values.get('subject') || 'Not specified'}`,
+                '',
+                values.get('message'),
+            ].join('\n');
 
-            this.form.reset();
-
-            setTimeout(() => {
-
-                button.textContent = original;
-                button.disabled = false;
-
-            }, 3000);
+            // This static site has no message server; open a ready-to-send
+            // email draft instead of showing a false success state.
+            window.location.href = `mailto:studio@arqarquitectura.co.za?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            if (status) status.textContent = 'Your email app will open with the project details ready to send.';
 
         });
 

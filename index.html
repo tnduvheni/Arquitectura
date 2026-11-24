@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ARQ Arquitectura | Architecture Studio</title>
   <meta name="description" content="ARQ Arquitectura is a Johannesburg-based architecture studio specialising in residential, commercial and concept design across South Africa.">
+  <meta name="theme-color" content="#10100f">
+  <link rel="icon" href="assets/images/logo.png" type="image/png">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,6 +17,7 @@
   <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/navigation.css">
   <link rel="stylesheet" href="css/hero.css">
+  <link rel="stylesheet" href="css/walkthrough.css">
   <link rel="stylesheet" href="css/components.css">
   <link rel="stylesheet" href="css/featured.css">
   <link rel="stylesheet" href="css/slideshow.css">
@@ -23,9 +26,13 @@
   <link rel="stylesheet" href="css/footer.css">
   <link rel="stylesheet" href="css/animations.css">
   <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/experience-ui.css">
+  <link rel="stylesheet" href="css/chat.css">
 </head>
 
 <body class="is-loading">
+
+  <div class="page-transition" aria-hidden="true"><img alt=""><span class="page-transition-title"></span></div>
 
   <!-- ── LOADER ── -->
   <div id="loader" role="status" aria-label="Loading">
@@ -35,13 +42,6 @@
         <span class="loader-bar-fill"></span>
       </div>
     </div>
-  </div>
-
-  <!-- ── CURSOR ── -->
-  <div id="cursor" aria-hidden="true">
-    <div class="cursor-dot"></div>
-    <div class="cursor-ring"></div>
-    <div class="cursor-text"></div>
   </div>
 
   <!-- ── SCROLL PROGRESS ── -->
@@ -74,8 +74,6 @@
     <a href="#about">Studio</a>
     <a href="#portfolio">Projects</a>
     <a href="#services">Services</a>
-    <a href="#process">Process</a>
-    <a href="#contact">Contact</a>
   </div>
 
   <main>
@@ -99,68 +97,60 @@
         <p class="hero-tag">ARQ Arquitectura — Johannesburg</p>
 
         <h1 class="hero-title">
-          <span></span>
-          <span>Believe and stuff</span>
-          <span></span>
+          <span>Spaces that</span>
+          <span>belong.</span>
         </h1>
 
-        <p class="hero-description">
-          We design architecture that belongs to its place, serves its people
-          and endures over time — from private residences to concept-driven
-          commercial work across South Africa.
-        </p>
-
-        <a href="#contact" class="nav-cta" style="display:inline-flex;">Start a Project</a>
-
+        <p class="hero-description">Architecture shaped by light, landscape and the way people live.</p>
 
         <div class="hero-buttons">
-          <a href="#portfolio" class="btn btn-primary">View Projects</a>
-
-          <section class="logo-slideshow" aria-label="Partner logos">
-  <div class="slideshow-track">
-    <div class="slideshow-item">
-      <img src="assets/images/partners/blacklep.png" alt="Black Leopard" loading="lazy">
-    </div>
-    <div class="slideshow-item">
-      <img src="assets/images/partners/Boxer.png" alt="Boxer" loading="lazy">
-    </div>
-    <div class="slideshow-item">
-      <img src="assets/images/partners/pib.png" alt="PIB Group" loading="lazy">
-    </div>
-    <div class="slideshow-item">
-      <img src="assets/images/partners/MGB.png" alt="MGB Hotel at 2 Ten" loading="lazy">
-    </div>
-    <div class="slideshow-item">
-      <img src="assets/images/partners/sbahle.png" alt="SBAHLE siyakhula" loading="lazy">
-    </div>
-    <div class="slideshow-item">
-      <img src="assets/images/partners/Unaka.png" alt="Unaka aesthetics" loading="lazy">
-    </div>
-    <div class="slideshow-item">
-      <img src="assets/images/partners/MGB.png" alt="Unaka aesthetics" loading="lazy">
-    </div>
-    <div class="slideshow-item">
-      <img src="assets/images/partners/anza.png" alt="Unaka aesthetics" loading="lazy">
-    </div>
-    <div class="slideshow-item">
-      <img src="assets/images/partners/mtg.png" alt="Unaka aesthetics" loading="lazy">
-    </div>
-  </div>
-</section>
+          <a href="#portfolio" class="btn btn-primary">Explore Projects</a>
+          <a href="#contact" class="btn btn-outline">Start a Project</a>
         </div>
       </div>
-
-      <!-- <div class="scroll-indicator" aria-hidden="true"><span></span></div> -->
+      <a class="hero-scroll-cue" href="#walkthrough"><span>Scroll to enter</span><i aria-hidden="true"></i></a>
     </section>
 
-    <!-- ════════════════════════════════
-         LOGO SLIDESHOW
-    ════════════════════════════════ -->
-    
-    <!-- ════════════════════════════════
-         ABOUT
-    ════════════════════════════════ -->
-    <section class="section featured-project" aria-labelledby="featured-heading">
+    <section class="partner-band" aria-label="Selected collaborators">
+      <p>Selected collaborators</p>
+      <div class="logo-slideshow">
+        <div class="slideshow-track">
+          <div class="slideshow-item"><img src="assets/images/partners/blacklep.png" alt="Black Leopard" loading="lazy"></div>
+          <div class="slideshow-item"><img src="assets/images/partners/Boxer.png" alt="Boxer" loading="lazy"></div>
+          <div class="slideshow-item"><img src="assets/images/partners/pib.png" alt="PIB Group" loading="lazy"></div>
+          <div class="slideshow-item"><img src="assets/images/partners/MGB.png" alt="MGB Hotel at 2 Ten" loading="lazy"></div>
+          <div class="slideshow-item"><img src="assets/images/partners/sbahle.png" alt="Sbahle Siyakhula" loading="lazy"></div>
+          <div class="slideshow-item"><img src="assets/images/partners/Unaka.png" alt="Unaka Aesthetics" loading="lazy"></div>
+          <div class="slideshow-item"><img src="assets/images/partners/anza.png" alt="Anza" loading="lazy"></div>
+          <div class="slideshow-item"><img src="assets/images/partners/mtg.png" alt="MTG" loading="lazy"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="walkthrough" class="walkthrough" aria-label="A journey through our architecture">
+      <div class="walkthrough-stage">
+        <div class="walkthrough-doorway" aria-hidden="true"></div>
+        <figure class="walkthrough-scene is-active">
+          <img src="assets/images/portfolio/house nema/Zambezi_Clear.jpg" alt="A residence opening into natural light" loading="eager" decoding="async">
+          <figcaption><span>01 / Arrival</span><strong>Enter the light.</strong></figcaption>
+        </figure>
+        <figure class="walkthrough-scene">
+          <img src="assets/images/portfolio/House Madhie/F6 (1).JPG" alt="Interior of House Madhie" loading="eager" decoding="async">
+          <figcaption><span>02 / Threshold</span><strong>Move through the quiet.</strong></figcaption>
+        </figure>
+        <figure class="walkthrough-scene">
+          <img src="assets/images/portfolio/Residence3/IMG-20260628-WA0079.jpg" alt="A residence opening toward its garden" loading="eager" decoding="async">
+          <figcaption><span>03 / Release</span><strong>Find your place in the landscape.</strong></figcaption>
+        </figure>
+        <div class="walkthrough-index" aria-hidden="true"><span>SCROLL TO EXPLORE</span><i></i><span>03 SPACES</span></div>
+      </div>
+      <div class="walkthrough-beat" aria-hidden="true"></div>
+      <div class="walkthrough-beat" aria-hidden="true"></div>
+      <div class="walkthrough-beat" aria-hidden="true"></div>
+    </section>
+
+    <!-- Studio introduction -->
+    <section id="about" class="section featured-project" aria-labelledby="about-heading">
 
         <div class="featured-image">
           <div class="hero-overlay" aria-hidden="true"></div> 
@@ -171,7 +161,7 @@
           alt="Riverside Residence — featured project by ARQ Arquitectura"
           loading="lazy">
       </div>
-       <div class="reveal-right">
+       <div class="studio-copy">
           <p class="section-subtitle">The Studio</p>
           <h2 id="about-heading" class="section-title">
             Architecture <em>rooted</em><br>in place and purpose.
@@ -184,24 +174,14 @@
             the people who use it — not when it chases a trend.
           </p>
 
-          <div class="about-stats">
-            <div class="stat">
-              <h3 data-count="48">0</h3>
-              <span>Projects Delivered</span>
-            </div>
-            <div class="stat">
-              <h3 data-count="12">0</h3>
-              <span>Years in Practice</span>
-            </div>
-            <div class="stat">
-              <h3 data-count="9">0</h3>
-              <span>Industry Awards</span>
-            </div>
+          <div class="studio-disciplines" aria-label="Studio disciplines">
+            <span>01 <b>Residential</b></span>
+            <span>02 <b>Commercial</b></span>
+            <span>03 <b>Concept design</b></span>
           </div>
 
     </div>
 
-        </div>
     </section>
 
 
@@ -245,6 +225,7 @@
           src="assets/images/featured/IMG-20260628-WA0055.jpg"
           alt="Architectural showcase by ARQ Arquitectura"
           loading="lazy">
+        <div class="full-image-caption"><span>Material / light / landscape</span><strong>Architecture in its own light.</strong></div>
       </div>
     </section>
 
@@ -270,14 +251,14 @@
           </div>
 
          <div class="portfolio-featured-grid">
-            <article class="portfolio-card reveal" data-category="commercial" data-title="Black Leopards HQ" data-location="Sandton, Johannesburg">
+            <article class="portfolio-card" data-category="residential" data-title="Hillside Residence" data-location="Sandton, Johannesburg">
               <a class="portfolio-link" href="project-detail.html?project=hillside-residence" aria-label="View project">
                 <div class="portfolio-image">
-                  <img src="assets/images/portfolio/Residence4/IMG-20260628-WA0061.jpg" alt="Black Leopards HQ" loading="lazy">
+                  <img src="assets/images/portfolio/Residence4/IMG-20260628-WA0061.jpg" alt="Hillside Residence" loading="lazy">
                 </div>
                 <div class="portfolio-overlay" aria-hidden="true">
                   <div>
-                    <p class="project-category">Commercial</p>
+                    <p class="project-category">Residential</p>
                     <h3 class="project-title">Hillside Residence</h3>
                     <p class="project-location">Sandton, Johannesburg</p>
                   </div>
@@ -285,7 +266,7 @@
               </a>
             </article>
 
-            <article class="portfolio-card reveal" data-category="residential" data-title="Courtyard House" data-location="Pretoria East">
+            <article class="portfolio-card" data-category="residential" data-title="Courtyard House" data-location="Pretoria East">
               <a class="portfolio-link" href="project-detail.html?project=courtyard-house" aria-label="View Courtyard House project">
                 <div class="portfolio-image">
                   <img src="assets/images/featured/IMG-20260628-WA0044.jpg" alt="Courtyard House" loading="lazy">
@@ -300,14 +281,14 @@
               </a>
             </article>
 
-            <article class="portfolio-card reveal" data-category="concept" data-title="Terrace Pavilion" data-location="Concept Study">
+            <article class="portfolio-card" data-category="concept" data-title="Terrace Pavilion" data-location="Concept Study">
               <a class="portfolio-link" href="project-detail.html?project=terrace-pavilion" aria-label="View Terrace Pavilion project">
                 <div class="portfolio-image">
                   <img src="assets/images/featured/IMG-20260628-WA0052.jpg" alt="Terrace Pavilion concept" loading="lazy">
                 </div>
                 <div class="portfolio-overlay" aria-hidden="true">
                   <div>
-                    <p class="project-category">Residential</p>
+                    <p class="project-category">Concept</p>
                     <h3 class="project-title">Terrace Pavilion</h3>
                     <p class="project-location">Concept Study</p>
                   </div>
@@ -327,77 +308,78 @@
         </div>
 
         <div class="portfolio-filters" role="group" aria-label="Filter projects">
-          <button class="filter-btn active" data-filter="all">All</button>
-          <button class="filter-btn" data-filter="residential">Residential</button>
-          <button class="filter-btn" data-filter="concept">Concept</button>
-          <button class="filter-btn" data-filter="commercial">Commercial</button>
+          <button class="filter-btn active" data-filter="all" aria-pressed="true">All</button>
+          <button class="filter-btn" data-filter="residential" aria-pressed="false">Residential</button>
+          <button class="filter-btn" data-filter="concept" aria-pressed="false">Concept</button>
+          <button class="filter-btn" data-filter="commercial" aria-pressed="false">Commercial</button>
         </div>
+        <p class="portfolio-results-status" aria-live="polite"></p>
 
-        <div class="portfolio-grid">
-          <article class="portfolio-card reveal" data-category="residential" data-title="Glass Box Residence" data-location="Bryanston, Johannesburg">
-            <a class="portfolio-link" href="project-detail.html?project=glass-box-residence" aria-label="View Glass Box Residence project">
+        <div class="portfolio-grid visible">
+          <article class="portfolio-card" data-category="commercial" data-title="SPA" data-location="Concept Study">
+            <a class="portfolio-link" href="project-detail.html?project=spa" aria-label="View SPA concept project">
               <div class="portfolio-image">
-                <img src="assets/images/portfolio/SPA/f3.jpg" alt="Glass Box Residence" loading="lazy">
+                <img src="assets/images/portfolio/SPA/f3.jpg" alt="SPA concept interior" loading="lazy">
               </div>
               <div class="portfolio-overlay" aria-hidden="true">
                 <div>
-                  <p class="project-category">Residential</p>
+                    <p class="project-category">Commercial</p>
                   <h3 class="project-title">SPA</h3>
-                  <p class="project-location">Bryanston, Johannesburg</p>
+                  <p class="project-location">Concept Study</p>
                 </div>
               </div>
             </a>
           </article>
 
-          <article class="portfolio-card reveal" data-category="residential" data-title="The Linear House" data-location="Waterkloof, Pretoria">
-            <a class="portfolio-link" href="project-detail.html?project=the-linear-house" aria-label="View House Madhie project">
+          <article class="portfolio-card" data-category="residential" data-title="House Madhie" data-location="South Africa">
+            <a class="portfolio-link" href="project-detail.html?project=house-madhie" aria-label="View House Madhie project">
               <div class="portfolio-image">
-                <img src="assets/images/portfolio/House Madhie/F6 (1).JPG" alt="The Linear House" loading="lazy">
+                <img src="assets/images/portfolio/House Madhie/F6 (1).JPG" alt="House Madhie" loading="lazy">
               </div>
               <div class="portfolio-overlay" aria-hidden="true">
                 <div>
-                  <p class="project-category">Residential</p>
+                    <p class="project-category">Residential</p>
                   <h3 class="project-title">House Madhie</h3>
-                  <p class="project-location">Waterkloof, Pretoria</p>
+                  <p class="project-location">South Africa</p>
                 </div>
               </div>
             </a>
           </article>
 
-          <article class="portfolio-card reveal" data-category="residential" data-title="The Linear House" data-location="Waterkloof, Pretoria">
+          <article class="portfolio-card" data-category="residential" data-title="House Mpho" data-location="Limpopo">
             <a class="portfolio-link" href="project-detail.html?project=house-mpho" aria-label="View House Mpho project">
               <div class="portfolio-image">
-                <img src="assets/images/portfolio/HOUSE MPHO/IMG_4419.jpeg" alt="The Linear House" loading="lazy">
+                <img src="assets/images/portfolio/HOUSE MPHO/IMG_4419.jpeg" alt="House Mpho" loading="lazy">
               </div>
               <div class="portfolio-overlay" aria-hidden="true">
                 <div>
                   <p class="project-category">Residential</p>
                   <h3 class="project-title">House Mpho</h3>
-                  <p class="project-location">Waterkloof, Pretoria</p>
+                  <p class="project-location">Limpopo</p>
                 </div>
               </div>
             </a>
           </article>
 
-          <article class="portfolio-card reveal" data-category="residential" data-title="The Linear House" data-location="Waterkloof, Pretoria">
+          <article class="portfolio-card" data-category="residential" data-title="House NG" data-location="South Africa">
             <a class="portfolio-link" href="project-detail.html?project=house-ng" aria-label="View House NG project">
               <div class="portfolio-image">
-                <img src="assets/images/portfolio/House NG/IMG_0663.jpg" alt="The Linear House" loading="lazy">
+                <img src="assets/images/portfolio/House NG/IMG_0663.jpg" alt="House NG" loading="lazy">
               </div>
               <div class="portfolio-overlay" aria-hidden="true">
                 <div>
                   <p class="project-category">Residential</p>
                   <h3 class="project-title">House NG</h3>
-                  <p class="project-location">Waterkloof, Pretoria</p>
+                  <p class="project-location">South Africa</p>
                 </div>
               </div>
             </a>
           </article>
 
-          <article class="portfolio-card reveal" data-category="residential" data-title="Riashumisana" data-location="Limpopo">
+          <article class="portfolio-card" data-category="residential" data-title="Riashumisana" data-location="Limpopo">
             <a class="portfolio-link" href="project-detail.html?project=riashumisana" aria-label="View Riashumisana project">
               <div class="portfolio-image">
-                <img src="assets/images/portfolio/RIASHUMISANA/V_2 - Photo.jpg" alt="The Linear House" loading="lazy">
+                <img src="assets/images/portfolio/RIASHUMISANA/V_2 - Photo.jpg" alt="Riashumisana residence" loading="lazy">
               </div>
               <div class="portfolio-overlay" aria-hidden="true">
                 <div>
@@ -409,25 +391,25 @@
             </a>
           </article>
 
-          <article class="portfolio-card reveal" data-category="Commercial" data-title="Ribolla Inn" data-location="Concept Study">
+          <article class="portfolio-card" data-category="commercial" data-title="Ribolla Inn" data-location="Concept Study">
             <a class="portfolio-link" href="project-detail.html?project=ribolla-inn" aria-label="View Ribolla Inn project">
               <div class="portfolio-image">
-                <img src="assets/images/portfolio/RIBOLLA INN/WhatsApp Image 2025-12-29 at 00.06.33.jpeg" alt="Timber Retreat concept" loading="lazy">
+                <img src="assets/images/portfolio/RIBOLLA INN/WhatsApp Image 2025-12-29 at 00.06.33.jpeg" alt="Ribolla Inn concept" loading="lazy">
               </div>
               <div class="portfolio-overlay" aria-hidden="true">
                 <div>
-                  <p class="project-category">Commercial</p>
-                  <h3 class="project-title">Riabolla Inn</h3>
+                  <p class="project-category">Hospitality</p>
+                  <h3 class="project-title">Ribolla Inn</h3>
                   <p class="project-location">Concept Study</p>
                 </div>
               </div>
             </a>
           </article>
 
-          <article class="portfolio-card reveal" data-category="commercial" data-title="Mami Life" data-location="Concept Study">
+          <article class="portfolio-card" data-category="commercial" data-title="Mami Life" data-location="Concept Study">
             <a class="portfolio-link" href="project-detail.html?project=mami-life" aria-label="View Mami Life project">
               <div class="portfolio-image">
-                <img src="assets/images/portfolio/MAMI LIFE/ChatGPT Image Jun 3, 2026, 07_52_45 PM.png" alt="Timber Retreat concept" loading="lazy">
+                <img src="assets/images/portfolio/MAMI LIFE/ChatGPT Image Jun 3, 2026, 07_52_45 PM.png" alt="Mami Life interior concept" loading="lazy">
               </div>
               <div class="portfolio-overlay" aria-hidden="true">
                 <div>
@@ -439,10 +421,10 @@
             </a>
           </article>
 
-          <article class="portfolio-card reveal" data-category="commercial" data-title="MTG HQ" data-location="Concept Study">
+          <article class="portfolio-card" data-category="commercial" data-title="MTG HQ" data-location="Concept Study">
             <a class="portfolio-link" href="project-detail.html?project=mtg-hq" aria-label="View MTG HQ project">
               <div class="portfolio-image">
-                <img src="assets/images/portfolio/MTG HQ/image00034.jpeg" alt="Timber Retreat concept" loading="lazy">
+                <img src="assets/images/portfolio/MTG HQ/image00034.jpeg" alt="MTG headquarters" loading="lazy">
               </div>
               <div class="portfolio-overlay" aria-hidden="true">
                 <div>
@@ -454,10 +436,10 @@
             </a>
           </article>
 
-          <article class="portfolio-card reveal" data-category="commercial" data-title="MTG LTT" data-location="Concept Study">
+          <article class="portfolio-card" data-category="commercial" data-title="MTG LTT" data-location="Concept Study">
             <a class="portfolio-link" href="project-detail.html?project=mtg-ltt" aria-label="View MTG LTT project">
               <div class="portfolio-image">
-                <img src="assets/images/portfolio/MTG LTT/F3.jpg" alt="Timber Retreat concept" loading="lazy">
+                <img src="assets/images/portfolio/MTG LTT/F3.jpg" alt="MTG LTT development" loading="lazy">
               </div>
               <div class="portfolio-overlay" aria-hidden="true">
                 <div>
@@ -469,10 +451,10 @@
             </a>
           </article>
 
-          <article class="portfolio-card reveal" data-category="commercial" data-title="MTG MAKHONDE" data-location="Concept Study">
+          <article class="portfolio-card" data-category="commercial" data-title="MTG MAKHONDE" data-location="Concept Study">
             <a class="portfolio-link" href="project-detail.html?project=mtg-makhonde" aria-label="View MTG Makhonde project">
               <div class="portfolio-image">
-                <img src="assets/images/portfolio/MTG MAKHONDE/F1 (2).jpg" alt="Timber Retreat concept" loading="lazy">
+                <img src="assets/images/portfolio/MTG MAKHONDE/F1 (2).jpg" alt="MTG Makhonde development" loading="lazy">
               </div>
               <div class="portfolio-overlay" aria-hidden="true">
                 <div>
@@ -484,7 +466,7 @@
             </a>
           </article>
 
-          <article class="portfolio-card reveal" data-category="residential" data-title="Stone &amp; Steel House" data-location="Constantia, Cape Town">
+          <article class="portfolio-card" data-category="residential" data-title="Stone &amp; Steel House" data-location="Constantia, Cape Town">
             <a class="portfolio-link" href="project-detail.html?project=stone-and-steel-house" aria-label="View Stone &amp; Steel House project">
               <div class="portfolio-image">
                 <img src="assets/images/portfolio/Residence3/IMG-20260628-WA0075.jpg" alt="Stone and Steel House" loading="lazy">
@@ -499,14 +481,14 @@
             </a>
           </article>
 
-          <article class="portfolio-card reveal" data-category="commercial" data-title="Jane Furse Complex" data-location="Limpopo, south africa">
+          <article class="portfolio-card" data-category="commercial" data-title="Jane Furse Complex" data-location="Limpopo, south africa">
             <a class="portfolio-link" href="project-detail.html?project=jane-furse" aria-label="View Jane Furse project">
               <div class="portfolio-image">
-                <img src="assets/images/portfolio/JANE FURSE/JF_Photo - 4.jpg" alt="Timber Retreat concept" loading="lazy">
+                <img src="assets/images/portfolio/JANE FURSE/JF_Photo - 4.jpg" alt="Jane Furse complex" loading="lazy">
               </div>
               <div class="portfolio-overlay" aria-hidden="true">
                 <div>
-                  <p class="project-category">Commercial</p>
+                  <p class="project-category">Civic</p>
                   <h3 class="project-title">Jane Furse</h3>
                   <p class="project-location">Concept Study</p>
                 </div>
@@ -514,7 +496,7 @@
             </a>
           </article>
 
-          <article class="portfolio-card reveal" data-category="residential" data-title="Garden Residence" data-location="Hyde Park, Johannesburg">
+          <article class="portfolio-card" data-category="residential" data-title="Garden Residence" data-location="Hyde Park, Johannesburg">
             <a class="portfolio-link" href="project-detail.html?project=garden-residence" aria-label="View Garden Residence project">
               <div class="portfolio-image">
                 <img src="assets/images/portfolio/Residence3/IMG-20260628-WA0079.jpg" alt="Garden Residence" loading="lazy">
@@ -529,7 +511,7 @@
             </a>
           </article>
 
-          <article class="portfolio-card reveal" data-category="concept" data-title="The Black Pavilion" data-location="Concept Study">
+          <article class="portfolio-card" data-category="concept" data-title="The Black Pavilion" data-location="Concept Study">
             <a class="portfolio-link" href="project-detail.html?project=the-black-pavilion" aria-label="View The Black Pavilion project">
               <div class="portfolio-image">
                 <img src="assets/images/portfolio/Residence4/IMG-20260628-WA0057.jpg" alt="The Black Pavilion concept" loading="lazy">
@@ -544,7 +526,7 @@
             </a>
           </article>
 
-          <article class="portfolio-card reveal" data-category="residential" data-title="The Ridge" data-location="Sandton, Johannesburg">
+          <article class="portfolio-card" data-category="residential" data-title="The Ridge" data-location="Sandton, Johannesburg">
             <a class="portfolio-link" href="project-detail.html?project=the-ridge" aria-label="View The Ridge project">
               <div class="portfolio-image">
                 <img src="assets/images/portfolio/Residence3/IMG-20260628-WA0073.jpg" alt="The Ridge residence" loading="lazy">
@@ -559,7 +541,7 @@
             </a>
           </article>
 
-          <article class="portfolio-card reveal" data-category="residential" data-title="Heritage Court" data-location="Rosebank, Johannesburg">
+          <article class="portfolio-card" data-category="residential" data-title="Heritage Court" data-location="Rosebank, Johannesburg">
             <a class="portfolio-link" href="project-detail.html?project=heritage-court" aria-label="View Heritage Court project">
               <div class="portfolio-image">
                 <img src="assets/images/portfolio/Residence2/IMG-20260628-WA0091.jpg" alt="Heritage Court" loading="lazy">
@@ -577,120 +559,40 @@
       </div>
     </section>
 
-    <!-- ════════════════════════════════
-         SERVICES
-    ════════════════════════════════ -->
-    
-    <!-- ════════════════════════════════
-         SERVICES
-    ════════════════════════════════ -->
-     <section class="section info-grid-section" aria-label="Process information">
+    <!-- Studio services -->
+     <section id="services" class="section info-grid-section" aria-labelledby="services-heading">
       <div class="container-wide">
-
-      <div class="hero-overlay" aria-hidden="true"></div>  
-     <div class="hero-grid"    aria-hidden="true"></div>
-      <div class="hero-light"   aria-hidden="true"></div>
         <div class="section-header">
           <div>
-            <p class="section-subtitle">What We Do</p>
+            <p class="section-subtitle">Rooms for living, work and gathering</p>
             <h2 id="services-heading" class="section-title">
-              Services built<br>for the <em>whole</em> process.
+              From first sketch<br>to <em>lasting place.</em>
             </h2>
           </div>
+          <p class="section-description">Every project starts with its people and its place. We bring the design, technical thinking and delivery together.</p>
         </div>
-        <div class="hero-overlay" aria-hidden="true"></div>
-      <div class="hero-grid"    aria-hidden="true"></div>
-      <div class="hero-light"   aria-hidden="true"></div>
-      <div class="container-wide">
-        <div class="info-grid">
-          <div class="info-card">
-            <h3>Timeline</h3>
-            <p>Most residential projects take 18-24 months from first meeting to handover, depending on complexity and council approval processes.</p>
-          </div>
-          <div class="info-card">
-            <h3>Budget</h3>
-            <p>We work transparently with budgets from the start, designing within realistic cost parameters and helping to prioritise where investment matters most.</p>
-          </div>
-          <div class="info-card">
-            <h3>Communication</h3>
-            <p>Regular meetings and detailed progress reports keep everyone aligned. We believe good design only happens when stakeholders understand each decision.</p>
-          </div>
-          <div class="info-card">
-            <h3>Collaboration</h3>
-            <p>We partner closely with engineers, contractors and consultants — the built result is only ever as good as the team behind it.</p>
-          </div>
+        <div class="service-rooms">
+          <article class="service-room"><span>01</span><div><p>01 / Imagine</p><h3>Architecture</h3><p>Homes and places of work shaped around the site, the brief and the lives unfolding inside them.</p></div><a class="service-room-cta" href="#contact" aria-label="Discuss architecture services">↗</a></article>
+          <article class="service-room"><span>02</span><div><p>02 / Compose</p><h3>Interior spaces</h3><p>Material, light and detail considered as one continuous experience from room to room.</p></div><a class="service-room-cta" href="#contact" aria-label="Discuss interior design services">↗</a></article>
+          <article class="service-room"><span>03</span><div><p>03 / Explore</p><h3>Concept design</h3><p>Early ideas and spatial studies that give a project direction before it becomes a building.</p></div><a class="service-room-cta" href="#contact" aria-label="Discuss concept design services">↗</a></article>
+          <article class="service-room"><span>04</span><div><p>04 / Realise</p><h3>Project delivery</h3><p>Clear documentation and steady collaboration to carry the design intent through construction.</p></div><a class="service-room-cta" href="#contact" aria-label="Discuss project delivery services">↗</a></article>
         </div>
-      </div>
-    
       </div>
     </section>
 
-    <!-- ════════════════════════════════
-         PROCESS
-    ════════════════════════════════ -->
-    <!-- <section id="process" class="section" aria-labelledby="process-heading">
-      <div class="container">
-
-        <div class="section-header">
-          <div>
-            <p class="section-subtitle">How We Work</p>
-            <h2 id="process-heading" class="section-title">
-              A process built<br>on <em>clarity</em>.
-            </h2>
-          </div>
+    <section id="process" class="process-journey" aria-labelledby="process-heading">
+      <div class="container-wide">
+        <p class="section-subtitle">A considered journey</p>
+        <h2 id="process-heading" class="section-title">Four steps.<br><em>One clear path.</em></h2>
+        <div class="process-rooms">
+          <article><span>01</span><p>Listen</p><h3>Discover</h3><p>We learn how you live, work and gather, and what the site makes possible.</p></article>
+          <article><span>02</span><p>Imagine</p><h3>Design</h3><p>We test ideas through plans, models and material studies until the direction feels right.</p></article>
+          <article><span>03</span><p>Resolve</p><h3>Develop</h3><p>We turn the chosen concept into coordinated drawings, details and approvals.</p></article>
+          <article><span>04</span><p>Make</p><h3>Deliver</h3><p>We stay alongside the project team as the design becomes a built place.</p></article>
         </div>
-
-        <div class="timeline">
-          <div class="timeline-line" aria-hidden="true"></div>
-
-          <div class="timeline-item">
-            <div class="timeline-number" aria-hidden="true">01</div>
-            <div class="timeline-content">
-              <h3>Discovery</h3>
-              <p>We start by understanding your site, budget and how you want
-              to live or work in the space — the foundation every decision
-              after this is built on.</p>
-            </div>
-          </div>
-
-          <div class="timeline-item">
-            <div class="timeline-number" aria-hidden="true">02</div>
-            <div class="timeline-content">
-              <h3>Concept Design</h3>
-              <p>Early massing, planning and material studies are developed
-              and tested against the brief, with visualisations to bring the
-              idea to life.</p>
-            </div>
-          </div>
-
-          <div class="timeline-item">
-            <div class="timeline-number" aria-hidden="true">03</div>
-            <div class="timeline-content">
-              <h3>Documentation</h3>
-              <p>Approved concepts are developed into detailed technical
-              drawings and specifications ready for council approval
-              and tender.</p>
-            </div>
-          </div>
-
-          <div class="timeline-item">
-            <div class="timeline-number" aria-hidden="true">04</div>
-            <div class="timeline-content">
-              <h3>Delivery</h3>
-              <p>We stay involved through construction, working alongside
-              contractors to make sure the built result matches the
-              design intent.</p>
-            </div>
-          </div>
-        </div>
-
       </div>
-    </section> -->
+    </section>
 
-    <!-- ════════════════════════════════
-         PROCESS INFO GRID
-    ════════════════════════════════ -->
-  
     <!-- ════════════════════════════════
          CONTACT
     ════════════════════════════════ -->
@@ -711,12 +613,6 @@
               </p>
             </div>
             <div class="contact-info-item">
-              <p class="contact-info-label">Phone</p>
-              <p class="contact-info-value">
-                <a href="tel:+27110000000">+27 11 000 0000</a>
-              </p>
-            </div>
-            <div class="contact-info-item">
               <p class="contact-info-label">Studio</p>
               <p class="contact-info-value">Johannesburg, South Africa</p>
             </div>
@@ -724,16 +620,17 @@
 
           <form id="contact-form" class="contact-form" novalidate>
             <div class="form-row form-group">
-              <input class="input" type="text"  name="name"    placeholder="Full name"      required autocomplete="name">
-              <input class="input" type="email" name="email"   placeholder="Email address"  required autocomplete="email">
+              <input class="input" type="text"  name="name"    placeholder="Full name"      aria-label="Full name" required autocomplete="name">
+              <input class="input" type="email" name="email"   placeholder="Email address"  aria-label="Email address" required autocomplete="email">
             </div>
             <div class="form-group">
-              <input class="input" type="text"  name="subject" placeholder="Project type">
+              <input class="input" type="text"  name="subject" placeholder="Project type" aria-label="Project type">
             </div>
             <div class="form-group">
-              <textarea class="input" name="message" placeholder="Tell us about your project" required></textarea>
+              <textarea class="input" name="message" placeholder="Tell us about your project" aria-label="Tell us about your project" required></textarea>
             </div>
             <button type="submit" class="btn btn-primary">Send Message</button>
+            <p class="contact-form-status" aria-live="polite"></p>
           </form>
         </div>
 
@@ -751,15 +648,13 @@
 
       <div class="footer-grid">
         <div class="footer-brand">
-          <img src="assets/images/logo.jpg" alt="ARQ Arquitectura" class="footer-logo">
+          <img src="assets/images/logo.png" alt="ARQ Arquitectura" class="footer-logo">
           <p class="footer-tagline">
             Architecture that belongs to its place, serves its people
             and endures over time.
           </p>
           <div class="footer-social">
-            <a href="#" aria-label="Instagram">IG</a>
-            <a href="#" aria-label="LinkedIn">IN</a>
-            <a href="#" aria-label="Pinterest">PI</a>
+            <a href="mailto:studio@arqarquitectura.co.za" aria-label="Email ARQ Arquitectura">✉</a>
           </div>
         </div>
 
@@ -777,7 +672,6 @@
           <p class="footer-heading">Contact</p>
           <div class="footer-links">
             <a href="mailto:studio@arqarquitectura.co.za">studio@arqarquitectura.co.za</a>
-            <a href="tel:+27110000000">+27 11 000 0000</a>
             <span>Johannesburg, South Africa</span>
           </div>
         </div>
@@ -791,22 +685,48 @@
     </div>
   </footer>
 
+  <div class="studio-chat" id="studio-chat">
+    <button class="studio-chat-launch" type="button" aria-expanded="false" aria-controls="studio-chat-panel" aria-label="Open ARQ quick answers">
+      <span class="studio-chat-icon" aria-hidden="true">↗</span><span>Ask ARQ</span>
+    </button>
+    <section class="studio-chat-panel" id="studio-chat-panel" role="dialog" aria-labelledby="studio-chat-title" hidden>
+      <header class="studio-chat-header">
+        <div><p>ARQ ARQUITECTURA</p><h2 id="studio-chat-title">A quick question?</h2></div>
+        <button class="studio-chat-close" type="button" aria-label="Close chat">×</button>
+      </header>
+      <div class="studio-chat-messages" role="log" aria-live="polite" aria-relevant="additions text">
+        <p class="studio-chat-message is-bot">Hello. I can answer basic questions about the studio, our services and how to get in touch.</p>
+      </div>
+      <div class="studio-chat-prompts" aria-label="Suggested questions">
+        <button type="button">What do you design?</button>
+        <button type="button">Where are you based?</button>
+        <button type="button">How do I start?</button>
+      </div>
+      <form class="studio-chat-form">
+        <label class="sr-only" for="studio-chat-input">Ask a question</label>
+        <input id="studio-chat-input" name="question" type="text" placeholder="Ask a question…" autocomplete="off" required>
+        <button type="submit" aria-label="Send question">Send</button>
+      </form>
+      <a class="studio-chat-email" href="mailto:studio@arqarquitectura.co.za">Email the studio ↗</a>
+    </section>
+  </div>
+
   <!-- ── LIBRARIES ── -->
-  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1/bundled/lenis.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
 
   <!-- ── SCRIPTS ── -->
-  <script src="js/cursor.js"></script>
+  <script src="js/page-transition.js"></script>
   <script src="js/navigation.js"></script>
   <script src="js/hero.js"></script>
   <script src="js/slideshow.js"></script>
   <script src="js/reveal.js"></script>
-  <script src="js/featured.js"></script>
+  <script src="js/experience.js"></script>
   <script src="js/portfolio.js"></script>
   <script src="js/process.js"></script>
   <script src="js/lightbox.js"></script>
   <script src="js/contact.js"></script>
+  <script src="js/chat.js"></script>
   <script src="js/app.js"></script>
 
 </body>
