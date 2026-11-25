@@ -197,13 +197,13 @@ table{
 
 ::-webkit-scrollbar-track{
 
-    background:var(--color-black);
+    background:var(--color-mocha);
 
 }
 
 ::-webkit-scrollbar-thumb{
 
-    background:var(--color-grey-dark);
+    background:var(--color-mocha-soft);
 
     border-radius:999px;
 
@@ -221,7 +221,7 @@ table{
 
     scrollbar-width:thin;
 
-    scrollbar-color:var(--color-grey-dark) var(--color-black);
+    scrollbar-color:var(--color-mocha-soft) var(--color-mocha);
 
 }
 

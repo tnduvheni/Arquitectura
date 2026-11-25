@@ -8,34 +8,55 @@
 COLORS
 ==========================================*/
 
---color-black:#080808;
---color-black-2:#101010;
---color-black-3:#181818;
+/* Soft sand — warm page base tones */
+--color-sand:        #E8E0D0;
+--color-sand-light:  #F2EDE3;
+--color-sand-mid:    #D6CEBA;
+--color-sand-deep:   #C4BAA4;
 
---color-white:#F5F5F3;
---color-light:#E9E9E7;
+/* Mocha green — dark structural tones */
+--color-mocha:       #2C3028;
+--color-mocha-light: #3D4438;
+--color-mocha-mid:   #4E5648;
+--color-mocha-soft:  #6B7462;
 
---color-grey:#A4A4A4;
---color-grey-dark:#6F6F6F;
---color-grey-light:#D5D5D5;
+/* Legacy aliases — keep so existing var() calls still resolve */
+--color-black:       #2C3028;
+--color-black-2:     #3D4438;
+--color-black-3:     #4E5648;
 
---color-red:#9F4035;
---color-red-dark:#6D2B24;
---color-red-light:#BD6A5D;
+--color-white:       #F2EDE3;
+--color-light:       #E8E0D0;
 
-/* Warm concrete, charcoal and restrained oxide red form the studio palette. */
---color-concrete:#A7A49C;
---color-concrete-light:#D0CCC2;
---color-concrete-mid:#88857D;
---color-concrete-deep:#696761;
---color-ink:#171716;
---color-oxide:#6D2B24;
+--color-grey:        #8A8F82;
+--color-grey-dark:   #6B7462;
+--color-grey-light:  #C4BAA4;
 
---color-border:#232323;
+/* Accent red — used sparingly */
+--color-red:         #9F4035;
+--color-red-dark:    #6D2B24;
+--color-red-light:   #BD6A5D;
+
+/* Concrete tones — used in process/walkthrough sections */
+--color-concrete:       #D6CEBA;
+--color-concrete-light: #E8E0D0;
+--color-concrete-mid:   #C4BAA4;
+--color-concrete-deep:  #A89E8A;
+--color-ink:            #2C3028;
+--color-oxide:          #7A3A2F;
+
+--color-border:      #C4BAA4;
 
 --color-success:#38A169;
 --color-warning:#D69E2E;
 --color-error:#E53E3E;
+
+/* Alias used in project-detail.css */
+--color-bg: #E8E0D0;
+
+/* Background tokens */
+--color-bg-page:    #1E211A;
+--color-bg-section: #252820;
 
 
 /*==========================================
@@ -44,6 +65,7 @@ TYPOGRAPHY
 
 --font-heading:'Cormorant Garamond',serif;
 --font-body:'DM Sans',sans-serif;
+--font-serif:'Cormorant Garamond',serif; /* alias for components that reference --font-serif */
 
 --fw-light:300;
 --fw-regular:400;
@@ -150,7 +172,7 @@ SHADOWS
 0 40px 100px rgba(0,0,0,.28);
 
 --shadow-glow:
-0 0 80px rgba(192,57,43,.18);
+0 0 80px rgba(159,64,53,.14);
 
 
 /*==========================================
@@ -216,10 +238,10 @@ GLASS
 ==========================================*/
 
 --glass:
-rgba(255,255,255,.04);
+rgba(44, 48, 40, .18);
 
 --glass-border:
-rgba(255,255,255,.08);
+rgba(196, 186, 164, .18);
 
 
 /*==========================================
@@ -229,15 +251,15 @@ GRADIENTS
 --gradient-dark:
 linear-gradient(
 180deg,
-rgba(8,8,8,.05),
-rgba(8,8,8,.92)
+rgba(30,33,26,.05),
+rgba(30,33,26,.92)
 );
 
 --gradient-hero:
 linear-gradient(
 90deg,
-rgba(8,8,8,.88),
-rgba(8,8,8,.18)
+rgba(30,33,26,.88),
+rgba(30,33,26,.18)
 );
 
 --gradient-accent:
@@ -271,7 +293,7 @@ var(--color-red),
     position: fixed;
     width: 8px;
     height: 8px;
-    background: white;
+    background: var(--color-mocha);
     border-radius: 50%;
     transform: translate(-50%, -50%);
     transition: opacity .2s;
@@ -282,7 +304,7 @@ var(--color-red),
     position: fixed;
     width: 42px;
     height: 42px;
-    border: 1px solid rgba(255, 255, 255, .45);
+    border: 1px solid rgba(44, 48, 40, .45);
     border-radius: 50%;
     transform: translate(-50%, -50%);
     transition:
@@ -299,7 +321,7 @@ var(--color-red),
     font-size: .65rem;
     font-weight: 600;
     letter-spacing: .18em;
-    color: white;
+    color: var(--color-mocha);
     text-transform: uppercase;
     white-space: nowrap;
     pointer-events: none;
@@ -312,7 +334,7 @@ var(--color-red),
   #cursor.active .cursor-ring {
     width: 80px;
     height: 80px;
-    background: rgba(192, 57, 43, .15);
+    background: rgba(159, 64, 53, .12);
     border-color: var(--color-red);
   }
 

@@ -45,7 +45,7 @@
     border: 1px solid var(--color-border);
     border-radius: 12px;
     background: transparent;
-    color: white;
+    color: var(--color-white);
     font-size: 1rem;
     font-family: inherit;
     transition: all 0.35s ease;
@@ -58,7 +58,7 @@
 .portfolio-search:focus {
     outline: none;
     border-color: var(--color-red);
-    box-shadow: 0 0 0 2px rgba(255, 61, 0, 0.1);
+    box-shadow: 0 0 0 2px rgba(159, 64, 53, .12);
 }
 
 .portfolio-filters {
@@ -81,13 +81,13 @@
 }
 
 .filter-btn:hover {
-    color: white;
+    color: var(--color-white);
     border-color: var(--color-red);
 }
 
 .filter-btn.active {
     background: var(--color-red);
-    color: white;
+    color: var(--color-white);
     border-color: var(--color-red);
 }
 

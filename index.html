@@ -126,21 +126,53 @@
 
     <section id="walkthrough" class="walkthrough" aria-label="A journey through our architecture">
       <div class="walkthrough-stage">
-        <div class="walkthrough-doorway" aria-hidden="true"></div>
-        <figure class="walkthrough-scene is-active">
-          <img src="assets/images/portfolio/house nema/Zambezi_Clear.jpg" alt="A residence opening into natural light" loading="eager" decoding="async">
-          <figcaption><span>01 / Arrival</span><strong>Enter the light.</strong></figcaption>
-        </figure>
-        <figure class="walkthrough-scene">
-          <img src="assets/images/portfolio/House Madhie/F6 (1).JPG" alt="Interior of House Madhie" loading="eager" decoding="async">
-          <figcaption><span>02 / Threshold</span><strong>Move through the quiet.</strong></figcaption>
-        </figure>
-        <figure class="walkthrough-scene">
-          <img src="assets/images/portfolio/Residence3/IMG-20260628-WA0079.jpg" alt="A residence opening toward its garden" loading="eager" decoding="async">
-          <figcaption><span>03 / Release</span><strong>Find your place in the landscape.</strong></figcaption>
-        </figure>
-        <div class="walkthrough-index" aria-hidden="true"><span>SCROLL TO EXPLORE</span><i></i><span>03 SPACES</span></div>
+
+        <!-- Background images, one per brief -->
+        <div class="brief-bg" data-index="0">
+          <img src="assets/images/portfolio/house nema/Zambezi_Clear.jpg" alt="" aria-hidden="true" loading="eager">
+        </div>
+        <div class="brief-bg" data-index="1">
+          <img src="assets/images/portfolio/House Madhie/F6 (1).JPG" alt="" aria-hidden="true" loading="eager">
+        </div>
+        <div class="brief-bg" data-index="2">
+          <img src="assets/images/portfolio/Residence3/IMG-20260628-WA0079.jpg" alt="" aria-hidden="true" loading="eager">
+        </div>
+
+        <!-- Brief panels -->
+        <div class="brief-panel" data-index="0" aria-hidden="true">
+          <div class="brief-lines">
+            <p data-line>Project_01</p>
+            <p data-line>Site: Limpopo, South Africa.</p>
+            <p data-line>Client: Private.</p>
+            <p data-line>Typology: Residential.</p>
+            <p data-line>Brief: A home that opens fully<br>toward the river and the sky.</p>
+          </div>
+        </div>
+
+        <div class="brief-panel" data-index="1" aria-hidden="true">
+          <div class="brief-lines">
+            <p data-line>Project_02</p>
+            <p data-line>Site: Johannesburg, South Africa.</p>
+            <p data-line>Client: Private.</p>
+            <p data-line>Typology: Residential.</p>
+            <p data-line>Brief: Warm, considered spaces<br>layered around daily life.</p>
+          </div>
+        </div>
+
+        <div class="brief-panel" data-index="2" aria-hidden="true">
+          <div class="brief-lines">
+            <p data-line>Project_03</p>
+            <p data-line>Site: Cape Town, South Africa.</p>
+            <p data-line>Client: Private.</p>
+            <p data-line>Typology: Residential.</p>
+            <p data-line>Brief: Stone, steel and garden —<br>a home shaped by its landscape.</p>
+          </div>
+        </div>
+
+        <div class="brief-scroll-cue" aria-hidden="true"><span>Scroll</span><i></i></div>
       </div>
+
+      <!-- Beat markers — one per brief -->
       <div class="walkthrough-beat" aria-hidden="true"></div>
       <div class="walkthrough-beat" aria-hidden="true"></div>
       <div class="walkthrough-beat" aria-hidden="true"></div>
@@ -232,9 +264,6 @@
     ════════════════════════════════ -->
     <section id="portfolio" class="section" aria-labelledby="portfolio-heading">
       <div class="container-wide">
-<div class="hero-overlay" aria-hidden="true"></div> 
-     <div class="hero-grid"    aria-hidden="true"></div>
-      <div class="hero-light"   aria-hidden="true"></div>
         <div class="portfolio-wrapper">
           <div class="portfolio-sidebar">
             <p class="section-subtitle">Our Work</p>
