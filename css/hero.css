@@ -13,7 +13,9 @@
   padding-top: var(--nav-height);
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+  padding-right: 40px;
+  padding-left: max(40px, calc((100vw - var(--container)) / 2));
   overflow: hidden;
   background: transparent;
 }
@@ -93,6 +95,61 @@
   position: relative;
   z-index: 10;
   width: min(860px, 100%);
+  margin-inline: 0;
+  opacity: 0;
+  transform: translate(-36px, 24px);
+  transition: opacity .9s ease .12s, transform 1s cubic-bezier(.22, .7, .2, 1) .12s;
+}
+
+/* ── Left-edge tint ── */
+
+.hero-tint {
+  position: absolute;
+  z-index: 1;
+  inset: 0 auto 0 0;
+  width: min(52vw, 820px);
+  background: linear-gradient(
+    90deg,
+    rgba(44, 48, 40, .94) 0%,
+    rgba(44, 48, 40, .76) 58%,
+    rgba(44, 48, 40, 0) 100%
+  );
+  transform: scaleX(0);
+  transform-origin: left center;
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 1.1s cubic-bezier(.22, .7, .2, 1), opacity .7s ease;
+}
+
+body:not(.is-loading) .hero-tint {
+  transform: scaleX(1);
+  opacity: 1;
+}
+
+body:not(.is-loading) .hero-content {
+  opacity: 1;
+  transform: translateY(24px);
+}
+
+/* ── Thin rules that draw in with the copy ── */
+
+.hero-rule {
+  display: block;
+  width: 72px;
+  height: 1px;
+  background: rgba(255, 255, 255, .72);
+  transform: scaleX(0);
+  transform-origin: left center;
+  opacity: 0;
+  transition: transform .7s cubic-bezier(.22, .7, .2, 1), opacity .4s ease;
+}
+
+.hero-rule-top { margin-bottom: 28px; transition-delay: .15s; }
+.hero-rule-bottom { margin-top: 36px; transition-delay: .9s; }
+
+body:not(.is-loading) .hero-rule {
+  transform: scaleX(1);
+  opacity: 1;
 }
 
 .hero-buttons {
@@ -109,6 +166,8 @@
 }
 
 @media (max-width: 600px) {
+  #hero { padding-inline: 20px; }
+  .hero-tint { width: 100%; }
   .hero-buttons { flex-direction: column; }
   .hero-title span {
     display: block;
@@ -117,4 +176,13 @@
   }
   .hero-content { will-change: transform; }
   .hero-background img { will-change: transform; transform-origin: center; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-tint,
+  .hero-content,
+  .hero-rule { transition: none; }
+  .hero-tint { transform: scaleX(1); opacity: 1; }
+  .hero-content { opacity: 1; transform: translateY(24px); }
+  .hero-rule { transform: scaleX(1); opacity: 1; }
 }

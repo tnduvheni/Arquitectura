@@ -15,7 +15,7 @@ section:not(#hero){scroll-margin-top:var(--nav-height-scrolled)}
 .page-transition.is-fading-out{opacity:1}
 .section-subtitle{letter-spacing:.24em}
 .section-title{letter-spacing:-.035em}
-#hero .hero-title{font-size:clamp(4.2rem,11vw,10rem);line-height:.98;letter-spacing:-.06em;max-width:none;margin:0 0 1.3rem}
+#hero .hero-title{font-family:var(--font-body);font-weight:500;font-size:clamp(4.2rem,11vw,10rem);line-height:1.05;letter-spacing:-.05em;max-width:none;margin:0 0 1.3rem}
 #hero .hero-title span{display:block;min-height:.98em}
 #hero .hero-title span[data-typing="true"]:after{content:"";display:inline-block;width:.045em;height:.72em;margin-left:.1em;background:currentColor;vertical-align:-.02em;animation:typing-caret .72s steps(2,end) infinite}
 #hero .hero-description{max-width:480px;color:rgba(245,245,243,.8)}
